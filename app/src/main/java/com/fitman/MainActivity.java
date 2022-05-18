@@ -1,6 +1,8 @@
 package com.fitman;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends BaseActivity {
 
@@ -10,4 +12,5 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
     }
+
 }
