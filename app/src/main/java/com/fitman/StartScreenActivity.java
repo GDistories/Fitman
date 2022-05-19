@@ -35,7 +35,7 @@ public class StartScreenActivity extends BaseActivity {
         startScreenRunnable = new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(StartScreenActivity.this, LanguageChangeActivity.class);
+                Intent intent = new Intent(StartScreenActivity.this, LanguageChangeActivity.class);//TODO
                 startActivity(intent);
                 finish();
             }
@@ -57,9 +57,9 @@ public class StartScreenActivity extends BaseActivity {
     }
 
     public void skipStartScreen(View view) {
-        startActivity(new Intent(this, LanguageChangeActivity.class));
+        startActivity(new Intent(this, LanguageChangeActivity.class));//TODO
         startScreenHandler.removeCallbacks(startScreenRunnable);
+        skipHandler.removeCallbacks(skipRunnable);
         finish();
-
     }
 }

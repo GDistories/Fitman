@@ -12,10 +12,8 @@ import java.util.Locale;
 public class Util {
     public static ContextWrapper changeLang(Context context, String lang_code, String country_code) {
         Locale sysLocale;
-
         Resources rs = context.getResources();
         Configuration config = rs.getConfiguration();
-
         sysLocale = config.getLocales().get(0);
         if (!lang_code.equals("") && !sysLocale.getCountry().equals(country_code)) {
             Locale locale = new Locale(lang_code, country_code);
@@ -25,5 +23,22 @@ public class Util {
         }
 
         return new ContextWrapper(context);
+    }
+
+    public static String getSysLang(Context context){
+        Locale sysLocale;
+        Resources rs = context.getResources();
+        Configuration config = rs.getConfiguration();
+        sysLocale = config.getLocales().get(0);
+        return sysLocale.getLanguage().toString();
+    }
+
+    public static String getSysCountry(Context context){
+        Locale sysLocale;
+        Resources rs = context.getResources();
+        Configuration config = rs.getConfiguration();
+        sysLocale = config.getLocales().get(0);
+        return sysLocale.getCountry().toString();
+
     }
 }

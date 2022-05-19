@@ -1,22 +1,19 @@
 package com.fitman;
 
+import static com.fitman.utils.Util.getSysCountry;
+import static com.fitman.utils.Util.getSysLang;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.content.Context;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 
 import com.fitman.utils.SharedPreferencesUtils;
 import com.fitman.utils.Util;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "BaseActivity";
@@ -32,8 +29,8 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         SharedPreferencesUtils.init(newBase);
-        String lang_code = SharedPreferencesUtils.getParam("language", "en").toString();
-        String country_code = SharedPreferencesUtils.getParam("country", "US").toString();
+        String lang_code = SharedPreferencesUtils.getParam("language", getSysLang(newBase)).toString();
+        String country_code = SharedPreferencesUtils.getParam("country", getSysCountry(newBase)).toString();
         Context context = Util.changeLang(newBase, lang_code, country_code);
         super.attachBaseContext(context);
     }
