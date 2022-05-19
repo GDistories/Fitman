@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.hardware.Sensor;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.LocaleList;
 import android.util.DisplayMetrics;
@@ -12,6 +15,7 @@ import android.view.View;
 
 import com.fitman.utils.SharedPreferencesUtils;
 
+import java.util.List;
 import java.util.Locale;
 
 public class LanguageChangeActivity extends BaseActivity {
@@ -20,6 +24,12 @@ public class LanguageChangeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language_change);
+
+        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        List<Sensor> list = sensorManager.getSensorList(Sensor.TYPE_ALL);
+        for (Sensor sensor : list) {
+            Log.e("sensor", sensor.getName());
+        }
     }
 
     public void change1(View view) {

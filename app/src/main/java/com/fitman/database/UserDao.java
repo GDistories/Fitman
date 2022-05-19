@@ -13,10 +13,15 @@ public class UserDao {
         sqLiteDatabase = mySQLiteHelper.getWritableDatabase();
     }
 
-    public boolean insertUser(String username, String password){
+    public boolean insertUser(String username, String password, String firstName, String lastName,
+                              String email, String phone){
         ContentValues values = new ContentValues();
         values.put("username",username);
         values.put("password",password);
+        values.put("firstName",firstName);
+        values.put("lastName",lastName);
+        values.put("email",email);
+        values.put("phone",phone);
 
         long id = sqLiteDatabase.insert("users",null,values);
         return id > 0;
@@ -38,13 +43,16 @@ public class UserDao {
         return userBean;
     }
 
-    public boolean updateUser(String username, String newPassword){
+    public boolean updateUser(String username, String newPassword, String newFirstName, String newLastName,
+                              String newEmail, String newPhone){
         ContentValues values = new ContentValues();
         values.put("password",newPassword);
+        values.put("firstName",newFirstName);
+        values.put("lastName",newLastName);
+        values.put("email",newEmail);
+        values.put("phone",newPhone);
 
-        long id = sqLiteDatabase.update("users",values,"username=?",new String[]{username});
+        long id = sqLiteDatabase.update("users",values,"username=?", new String[]{username});
         return id > 0;
     }
-
-
 }
