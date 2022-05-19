@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Fitman</string>
     <string name="login_title">登录</string>
+    <string name="skip">1</string>
 </resources>

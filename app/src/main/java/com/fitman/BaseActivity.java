@@ -3,12 +3,14 @@ package com.fitman;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
 
 import com.fitman.utils.SharedPreferencesUtils;
 import com.fitman.utils.Util;
@@ -23,6 +25,8 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate: " + this.getClass().getSimpleName());
+        getSupportActionBar().hide();
+        hideStatusAndActionBar();
     }
 
     @Override
@@ -39,6 +43,25 @@ public class BaseActivity extends AppCompatActivity {
         super.onResume();
         Log.d(TAG, "onResume: " + this.getClass().getSimpleName());
     }
+
+    public void hideStatusAndActionBar() {
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
+        // Hide the action bar.
+        getSupportActionBar().hide();
+    }
+
+    public void showStatusBar() {
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    }
+
+
 
 
 

@@ -30,6 +30,7 @@ public class LanguageChangeActivity extends BaseActivity {
         for (Sensor sensor : list) {
             Log.e("sensor", sensor.getName());
         }
+
     }
 
     public void change1(View view) {
