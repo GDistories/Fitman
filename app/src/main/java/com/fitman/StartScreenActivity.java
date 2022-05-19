@@ -19,7 +19,7 @@ public class StartScreenActivity extends BaseActivity {
     Handler skipHandler = new Handler();
     Runnable startScreenRunnable;
     Runnable skipRunnable;
-    Integer times = 5;
+    int times = SPLASH_TIME_OUT/1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
