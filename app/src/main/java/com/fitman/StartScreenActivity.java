@@ -26,6 +26,7 @@ public class StartScreenActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        hideStatusAndActionBar();
         setContentView(R.layout.activity_start_screen);
         hideStatusAndActionBar();
         Button btn_skip = findViewById(R.id.btn_skip);

@@ -4,4 +4,6 @@
     <string name="skip">1</string>
     <string name="lang_zh_CN">1</string>
     <string name="lang_zh_TW">1</string>
+    <string name="version">1</string>
+    <string name="back">1</string>
 </resources>

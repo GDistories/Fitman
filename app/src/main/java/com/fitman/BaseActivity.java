@@ -3,6 +3,7 @@ package com.fitman;
 import static com.fitman.utils.Util.getSysLang;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -29,7 +30,7 @@ public class BaseActivity extends AppCompatActivity {
         SharedPreferencesUtils.setParam("language", language);
         Log.d(TAG, "onCreate: " + this.getClass().getSimpleName());
         getSupportActionBar().hide();
-        hideStatusAndActionBar();
+
     }
 
     @Override
@@ -56,11 +57,26 @@ public class BaseActivity extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
-    public void showStatusBar() {
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    public void showActionBar() {
+        getSupportActionBar().show();
+    }
+
+    public void showBackButton() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowCustomEnabled(true);
+        }
+    }
+
+    public void hideBackButton() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeButtonEnabled(false);
+            actionBar.setDisplayHomeAsUpEnabled(false);
+            actionBar.setDisplayShowCustomEnabled(false);
+        }
     }
 
 

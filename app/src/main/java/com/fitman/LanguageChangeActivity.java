@@ -62,7 +62,7 @@ public class LanguageChangeActivity extends BaseActivity {
     }
 
     public void setting(View view) {
-        startActivity(new Intent(this, SettingActivity.class));
+        startActivity(new Intent(this, AboutActivity.class));
         finish();
     }
 

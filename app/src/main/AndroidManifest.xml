@@ -11,10 +11,10 @@
         android:theme="@style/Theme.Fitman">
         <activity
             android:name=".AboutActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MyActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SettingActivity"
             android:exported="true"

@@ -6,4 +6,11 @@
     <string name="lang_zh_CN">Simplified Chinese(简体中文)</string>
     <string name="lang_zh_TW">Traditional Chinese(繁体中文)</string>
     <string name="version">Version 1.0</string>
+    <string name="back">Back</string>
+    <string name="developer" translatable="false">Developer\nGao Jiaxiang\nSWE1909468</string>
+    <string name="title_home">Home</string>
+    <string name="title_sport">Sports</string>
+    <string name="title_fitness">Fitness</string>
+    <string name="title_daily_attendance">Daily Attandance</string>
+    <string name="title_my">My</string>
 </resources>
