@@ -65,7 +65,7 @@ public class StartScreenActivity extends BaseActivity {
     }
 
     public void skipStartScreen(View view) {
-        startActivity(new Intent(this, LanguageChangeActivity.class));//TODO
+        startActivity(new Intent(this, NavigationBottomActivity.class));//TODO
         startScreenHandler.removeCallbacks(startScreenRunnable);
         skipHandler.removeCallbacks(skipRunnable);
         finish();

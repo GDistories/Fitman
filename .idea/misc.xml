@@ -20,6 +20,7 @@
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_main.xml" value="0.22871376811594202" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_my.xml" value="0.16168478260869565" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_mylist.xml" value="0.2859375" />
+        <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_navigation_bottom.xml" value="0.16927083333333334" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_news_detail.xml" value="0.2713541666666667" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_normal_list.xml" value="0.2713541666666667" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_record_show.xml" value="0.2859375" />
@@ -37,7 +38,12 @@
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/dialog_about_us.xml" value="0.2859375" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/dialog_loading.xml" value="0.2859375" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/first_fragment.xml" value="0.2859375" />
+        <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/fragment_daily_attandance.xml" value="0.16927083333333334" />
+        <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/fragment_fitness.xml" value="0.16927083333333334" />
+        <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/fragment_home.xml" value="0.33958333333333335" />
+        <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/fragment_my.xml" value="0.33958333333333335" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/fragment_second.xml" value="0.2859375" />
+        <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/fragment_sport.xml" value="0.33958333333333335" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/listview_item.xml" value="0.2859375" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/login_page.xml" value="0.2859375" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/setting_listview_item.xml" value="0.2859375" />

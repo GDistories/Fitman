@@ -6,4 +6,9 @@
     <string name="lang_zh_TW">1</string>
     <string name="version">1</string>
     <string name="back">1</string>
+    <string name="title_home">1</string>
+    <string name="title_sport">1</string>
+    <string name="title_fitness">1</string>
+    <string name="title_daily_attendance">1</string>
+    <string name="title_my">1</string>
 </resources>

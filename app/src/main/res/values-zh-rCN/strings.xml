@@ -6,4 +6,9 @@
     <string name="lang_zh_TW">繁体中文(Traditional Chinese)</string>
     <string name="back">返回</string>
     <string name="version">版本 1.0</string>
+    <string name="title_home">主页</string>
+    <string name="title_sport">运动</string>
+    <string name="title_my">我</string>
+    <string name="title_daily_attendance">签到</string>
+    <string name="title_fitness">健身</string>
 </resources>

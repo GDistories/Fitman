@@ -11,6 +11,9 @@
     <string name="title_home">Home</string>
     <string name="title_sport">Sports</string>
     <string name="title_fitness">Fitness</string>
-    <string name="title_daily_attendance">Daily Attandance</string>
+    <string name="title_daily_attendance">Attandance</string>
     <string name="title_my">My</string>
+    <string name="title_activity_navigation_bottom">NavigationBottomActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 </resources>
