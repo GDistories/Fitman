@@ -7,26 +7,26 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.fitman.ui.home.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_sport"
         android:name="com.fitman.SportFragment"
-        android:label="fragment_sport"
+        android:label="Sports"
         tools:layout="@layout/fragment_sport" />
     <fragment
         android:id="@+id/navigation_fitness"
         android:name="com.fitman.FitnessFragment"
-        android:label="fragment_fitness"
+        android:label="Fitness"
         tools:layout="@layout/fragment_fitness" />
     <fragment
         android:id="@+id/navigation_daily_attendance"
-        android:name="com.fitman.DailyAttandanceFragment"
-        android:label="fragment_daily_attandance"
-        tools:layout="@layout/fragment_daily_attandance" />
+        android:name="com.fitman.DailyAttendanceFragment"
+        android:label="Daily Attendance"
+        tools:layout="@layout/fragment_daily_attendance" />
     <fragment
         android:id="@+id/navigation_my"
         android:name="com.fitman.MyFragment"
-        android:label="fragment_my"
+        android:label="My"
         tools:layout="@layout/fragment_my" />
 </navigation>
