@@ -19,43 +19,38 @@ import java.util.List;
 import java.util.Locale;
 
 public class LanguageChangeActivity extends BaseActivity {
+    private static final String TAG = "LanguageChangeActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language_change);
 
-        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        List<Sensor> list = sensorManager.getSensorList(Sensor.TYPE_ALL);
-        for (Sensor sensor : list) {
-            Log.e("sensor", sensor.getName());
-        }
-
+//        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+//        List<Sensor> list = sensorManager.getSensorList(Sensor.TYPE_ALL);
+//        for (Sensor sensor : list) {
+//            Log.e("sensor", sensor.getName());
+//        }
+        //TODO
     }
 
     public void change1(View view) {
-        String language = "zh";
-        String country = "CN";
+        String language = "zh_CN";
         SharedPreferencesUtils.setParam("language", language);
-        SharedPreferencesUtils.setParam("country", country);
         startActivity(new Intent(this, LanguageChangeActivity.class));
         finish();
     }
 
     public void change2(View view) {
-        String language = "zh";
-        String country = "TW";
+        String language = "zh_TW";
         SharedPreferencesUtils.setParam("language", language);
-        SharedPreferencesUtils.setParam("country", country);
         startActivity(new Intent(this, LanguageChangeActivity.class));
         finish();
     }
 
     public void change3(View view) {
-        String language = "en";
-        String country = "US";
+        String language = "en_US";
         SharedPreferencesUtils.setParam("language", language);
-        SharedPreferencesUtils.setParam("country", country);
         startActivity(new Intent(this, LanguageChangeActivity.class));
         finish();
     }
@@ -63,6 +58,11 @@ public class LanguageChangeActivity extends BaseActivity {
     public void clear(View view) {
         SharedPreferencesUtils.clear();
         startActivity(new Intent(this, LanguageChangeActivity.class));
+        finish();
+    }
+
+    public void setting(View view) {
+        startActivity(new Intent(this, SettingActivity.class));
         finish();
     }
 

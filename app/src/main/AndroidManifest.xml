@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitman">
         <activity
+            android:name=".SettingActivity"
+            android:exported="true"
+            android:launchMode="singleTask"/>
+        <activity
             android:name=".StartScreenActivity"
             android:exported="true">
             <intent-filter>
@@ -17,16 +21,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".LanguageChangeActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

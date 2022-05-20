@@ -2,4 +2,7 @@
     <string name="app_name">Fitman</string>
     <string name="login_title">Login</string>
     <string name="skip">skip</string>
+    <string name="lang_en" translatable="false">English</string>
+    <string name="lang_zh_CN">Simplified Chinese(简体中文)</string>
+    <string name="lang_zh_TW">Traditional Chinese(繁体中文)</string>
 </resources>

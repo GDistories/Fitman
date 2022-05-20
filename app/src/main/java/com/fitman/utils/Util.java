@@ -10,7 +10,12 @@ import android.util.Log;
 import java.util.Locale;
 
 public class Util {
-    public static ContextWrapper changeLang(Context context, String lang_code, String country_code) {
+    private static final String TAG = "Util";
+    public static ContextWrapper changeLang(Context context, String lang) {
+
+        String[] langs = lang.split("_");
+        String lang_code = langs[0];
+        String country_code = langs[1];
         Locale sysLocale;
         Resources rs = context.getResources();
         Configuration config = rs.getConfiguration();
@@ -30,7 +35,7 @@ public class Util {
         Resources rs = context.getResources();
         Configuration config = rs.getConfiguration();
         sysLocale = config.getLocales().get(0);
-        return sysLocale.getLanguage().toString();
+        return sysLocale.toString();
     }
 
     public static String getSysCountry(Context context){

@@ -1,6 +1,5 @@
 package com.fitman;
 
-import static com.fitman.utils.Util.getSysCountry;
 import static com.fitman.utils.Util.getSysLang;
 
 import androidx.annotation.Nullable;
@@ -21,6 +20,13 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String language = getSysLang(this);
+        if (language.equals("zh_CN_#Hans")) {
+            language = "zh_CN";
+        }else if(language.equals("zh_TW_#Hant")){
+            language = "zh_TW";
+        }
+        SharedPreferencesUtils.setParam("language", language);
         Log.d(TAG, "onCreate: " + this.getClass().getSimpleName());
         getSupportActionBar().hide();
         hideStatusAndActionBar();
@@ -29,9 +35,8 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         SharedPreferencesUtils.init(newBase);
-        String lang_code = SharedPreferencesUtils.getParam("language", getSysLang(newBase)).toString();
-        String country_code = SharedPreferencesUtils.getParam("country", getSysCountry(newBase)).toString();
-        Context context = Util.changeLang(newBase, lang_code, country_code);
+        String lang = SharedPreferencesUtils.getParam("language", getSysLang(newBase)).toString();
+        Context context = Util.changeLang(newBase, lang);
         super.attachBaseContext(context);
     }
 
