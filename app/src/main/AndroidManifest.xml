@@ -10,9 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitman">
         <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingActivity"
             android:exported="true"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask" />
         <activity
             android:name=".StartScreenActivity"
             android:exported="true">

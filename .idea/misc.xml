@@ -6,6 +6,7 @@
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/drawable/btn_normal.xml" value="0.176" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/font/logo.xml" value="0.36614583333333334" />
+        <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_about.xml" value="0.22" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_add_news.xml" value="0.2713541666666667" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_base.xml" value="0.16388044579533942" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_before_date_check.xml" value="0.2713541666666667" />
@@ -17,6 +18,7 @@
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_language_change.xml" value="0.22871376811594202" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_login.xml" value="0.2859375" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_main.xml" value="0.22871376811594202" />
+        <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_my.xml" value="0.16168478260869565" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_mylist.xml" value="0.2859375" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_news_detail.xml" value="0.2713541666666667" />
         <entry key="..\:/XMUM/Android/Fitman/app/src/main/res/layout/activity_normal_list.xml" value="0.2713541666666667" />
