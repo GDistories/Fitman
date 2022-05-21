@@ -35,7 +35,6 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void attachBaseContext(Context newBase) {
-        SharedPreferencesUtils.init(newBase);
         String lang = SharedPreferencesUtils.getParam("language", getSysLang(newBase)).toString();
         Context context = Util.changeLang(newBase, lang);
         super.attachBaseContext(context);

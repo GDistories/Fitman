@@ -6,7 +6,7 @@
     app:startDestination="@id/navigation_home">
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.fitman.ui.home.HomeFragment"
+        android:name="com.fitman.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
     <fragment
