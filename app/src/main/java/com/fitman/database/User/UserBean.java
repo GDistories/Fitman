@@ -1,9 +1,13 @@
-package com.fitman.database;
+package com.fitman.database.User;
 
+import android.util.Log;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UserBean {
-    private int userId;
+    private int userId = -1;
     private String username;
     private String password;
     private String email;
@@ -13,13 +17,24 @@ public class UserBean {
     private String gender;
     private String height;
     private String weight;
-    private String birthday;
+    private Date birthday;
 
-    public String getBirthday() {
+
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(String birthday_string) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date birthday = null;
+        if(birthday_string!=null){
+            try {
+                Log.e("TAG", birthday_string );
+                birthday = simpleDateFormat.parse(birthday_string);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
         this.birthday = birthday;
     }
 
@@ -101,5 +116,22 @@ public class UserBean {
 
     public void setWeight(String weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "UserBean{" +
+                "userId=" + userId +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", gender='" + gender + '\'' +
+                ", height='" + height + '\'' +
+                ", weight='" + weight + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }

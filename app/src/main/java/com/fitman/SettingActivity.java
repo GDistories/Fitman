@@ -29,8 +29,11 @@ public class SettingActivity extends BaseActivity {
         listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
-                startActivity(new Intent(context, LanguageChangeActivity.class));
-                finish();
+                if(s.equals("language")){
+                    startActivity(new Intent(context, LanguageChangeActivity.class));
+                    finish();
+                }
+
             }
         };
         prefs.registerOnSharedPreferenceChangeListener(listener);
