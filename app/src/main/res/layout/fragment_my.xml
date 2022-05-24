@@ -25,7 +25,8 @@
                 android:id="@+id/view_user"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/setting_item_selector">
-                <ImageView
+
+                <com.fitman.RoundPicture
                     android:id="@+id/head"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
