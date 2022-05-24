@@ -78,6 +78,13 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public void setActionBarTitle(String title) {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(title);
+        }
+    }
+
 
 
 

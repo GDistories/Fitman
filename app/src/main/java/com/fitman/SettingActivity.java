@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 
 public class SettingActivity extends BaseActivity {
@@ -18,6 +19,8 @@ public class SettingActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        showActionBar();
+        setActionBarTitle("Setting");
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -30,8 +33,18 @@ public class SettingActivity extends BaseActivity {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
                 if(s.equals("language")){
-                    startActivity(new Intent(context, LanguageChangeActivity.class));
-                    finish();
+//                    startActivity(new Intent(context, NavigationBottomActivity.class));
+//                    finish();
+
+                    // 1秒钟后重启应用
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage(getApplication().getPackageName());
+                            LaunchIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(LaunchIntent);
+                        }
+                    }, 100);
                 }
 
             }

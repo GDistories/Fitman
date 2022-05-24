@@ -18,4 +18,15 @@
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="profile_photo">Profile photo</string>
     <string name="my_data">My Data</string>
+    <string name="username">Gao Jiaxiang</string>
+    <string name="username_unlogin">Hello, User!\nPlease Log in First!</string>
+    <string name="profile">Profile</string>
+    <string name="setting">Setting</string>
+    <string name="sex">Sex</string>
+    <string name="feedback">Feedback</string>
+    <string name="check_for_update">Check for Update</string>
+    <string name="about">About</string>
+    <string name="searching_update">Searching for new version…</string>
+    <string name="no_update">The current APP is the latest version. </string>
+
 </resources>

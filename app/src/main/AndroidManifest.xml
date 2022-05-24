@@ -20,7 +20,9 @@
         <activity
             android:name=".NavigationBottomActivity"
             android:exported="true"
-            android:label="@string/title_activity_navigation_bottom" />
+            android:label="@string/title_activity_navigation_bottom"
+            android:launchMode="singleTask"
+            />
         <activity
             android:name=".AboutActivity"
             android:exported="true" />
