@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="Vitality_orange">#FFFFC107</color>
+    <color name="Vitality_orange_alpha">#30FFC107</color>
     <color name="orange">#FC922C</color>
     <color name="black2">#ffeeeeee</color>
 </resources>

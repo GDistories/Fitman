@@ -15,13 +15,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitman">
         <activity
+            android:name=".MyDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserProfileActivity"
             android:exported="true" />
         <activity
             android:name=".NavigationBottomActivity"
             android:exported="true"
-            android:label="@string/title_activity_navigation_bottom"
-            />
+            android:label="@string/title_activity_navigation_bottom" />
         <activity
             android:name=".AboutActivity"
             android:exported="true" />

@@ -25,50 +25,38 @@
                 android:paddingBottom="30dp">
 
                 <com.fitman.RoundPicture
-                    android:id="@+id/head"
+                    android:id="@+id/im_profile"
                     android:layout_width="100.0dip"
                     android:layout_height="100.0dip"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:src="@drawable/defaultprofilephoto" />
+                    android:src="@drawable/default_profile_pic" />
 
                 <TextView
-                    android:id="@+id/tvname"
+                    android:id="@+id/tv_username"
                     style="@style/TxtTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/head"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:paddingTop="10dp"
-                    android:text="@string/username"
-                    android:gravity="center"
-                    android:visibility="visible"
-                    android:textSize="20.0sp" />
-
-                <TextView
-                    android:id="@+id/tvname_unlogin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/head"
+                    app:layout_constraintTop_toBottomOf="@+id/im_profile"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:paddingTop="10dp"
                     android:text="@string/username_unlogin"
                     android:gravity="center"
-                    android:visibility="gone"
-                    android:textSize="18.0sp" />
+                    android:visibility="visible"
+                    android:textSize="20.0sp" />
+
 
                 <ImageView
                     android:id="@+id/iv_sex"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    app:layout_constraintTop_toTopOf="@+id/tvname"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvname"
+                    app:layout_constraintTop_toTopOf="@+id/tv_username"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_username"
                     android:paddingTop="13dp"
-                    app:layout_constraintStart_toEndOf="@+id/tvname"
-                    android:visibility="visible"
+                    app:layout_constraintStart_toEndOf="@+id/tv_username"
+                    android:visibility="gone"
                     android:src="@drawable/ic_sex_male"
                     android:contentDescription="@string/sex" />
 <!--                TODO-->
@@ -84,7 +72,7 @@
 
 
             <TextView
-                android:id="@+id/txt_my_data"
+                android:id="@+id/tv_myData"
                 style="@style/TxtTitle"
                 android:textSize="16sp"
                 android:gravity="center_vertical"
@@ -104,7 +92,7 @@
                 android:layout_height="1.0dip" />
 
             <TextView
-                android:id="@+id/txt_profile"
+                android:id="@+id/tv_profile"
                 style="@style/TxtTitle"
                 android:textSize="16sp"
                 android:gravity="center_vertical"
