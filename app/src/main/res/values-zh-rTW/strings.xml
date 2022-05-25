@@ -11,4 +11,17 @@
     <string name="title_fitness">1</string>
     <string name="title_daily_attendance">1</string>
     <string name="title_my">1</string>
+    <string name="profile_photo">1</string>
+    <string name="lang_en">1</string>
+    <string name="my_data">1</string>
+    <string name="username">1</string>
+    <string name="username_unlogin">1</string>
+    <string name="profile">1</string>
+    <string name="setting">1</string>
+    <string name="sex">1</string>
+    <string name="feedback">1</string>
+    <string name="check_for_update">1</string>
+    <string name="about">1</string>
+    <string name="searching_update">1</string>
+    <string name="no_update">1</string>
 </resources>

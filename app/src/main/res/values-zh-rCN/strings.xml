@@ -11,4 +11,16 @@
     <string name="title_my">我</string>
     <string name="title_daily_attendance">签到</string>
     <string name="title_fitness">健身</string>
+    <string name="profile_photo">头像</string>
+    <string name="lang_en">英语(English)</string>
+    <string name="my_data">我的数据</string>
+    <string name="searching_update">正在寻找新版本…</string>
+    <string name="no_update">目前的APP已是最新版本</string>
+    <string name="about">关于</string>
+    <string name="check_for_update">检查更新</string>
+    <string name="feedback">问题反馈</string>
+    <string name="sex">性别</string>
+    <string name="setting">设置</string>
+    <string name="profile">个人概况</string>
+    <string name="username_unlogin">你好，用户！\n请先登录！</string>
 </resources>

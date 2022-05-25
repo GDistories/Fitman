@@ -2,7 +2,7 @@
     <string name="app_name">Fitman</string>
     <string name="login_title">Login</string>
     <string name="skip">skip</string>
-    <string name="lang_en" translatable="false">English</string>
+    <string name="lang_en">English</string>
     <string name="lang_zh_CN">Simplified Chinese(简体中文)</string>
     <string name="lang_zh_TW">Traditional Chinese(繁体中文)</string>
     <string name="version">Version 1.0</string>
@@ -13,11 +13,10 @@
     <string name="title_fitness">Fitness</string>
     <string name="title_daily_attendance">Attendance</string>
     <string name="title_my">My</string>
-    <string name="title_activity_navigation_bottom">NavigationBottomActivity</string>
+    <string name="title_activity_navigation_bottom" translatable="false">NavigationBottomActivity</string>
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="profile_photo">Profile photo</string>
     <string name="my_data">My Data</string>
-    <string name="username">Gao Jiaxiang</string>
     <string name="username_unlogin">Hello, User!\nPlease Log in First!</string>
     <string name="profile">Profile</string>
     <string name="setting">Setting</string>
