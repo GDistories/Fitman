@@ -17,7 +17,7 @@
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="profile_photo">Profile photo</string>
     <string name="my_data">My Data</string>
-    <string name="username_unlogin">Hello, User!\nPlease Log in First!</string>
+    <string name="username_unlogin">Hello, User!\nPlease Click Here to Log in First!</string>
     <string name="profile">Profile</string>
     <string name="setting">Setting</string>
     <string name="sex">Sex</string>
@@ -26,5 +26,33 @@
     <string name="about">About</string>
     <string name="searching_update">Searching for new version…</string>
     <string name="no_update">The current APP is the latest version. </string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="sign_up_for_fitman"><u>Sign up for Fitman</u></string>
+    <string name="login_fail">Login failed, please check your user name or password!</string>
+    <string name="username_empty">Please fill in the username</string>
+    <string name="password_empty">Please fill in the password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="password_confirm_empty">Please fill in the password confirmation</string>
+    <string name="password_not_equal">The password and the confirmation password are not the same</string>
+    <string name="username_exist">The username already exists</string>
+    <string name="sign_up_success">Sign up success!</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone">Phone</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="e_mail">E-mail</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="birthday">Birthday</string>
+    <string name="year_slash" translatable="false">/</string>
+    <string name="month_slash" translatable="false">/</string>
+    <string name="submit">submit</string>
+    <string name="cancel">cancel</string>
+    <string name="log_out">Log out</string>
 
 </resources>

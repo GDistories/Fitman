@@ -22,5 +22,5 @@
     <string name="sex">性别</string>
     <string name="setting">设置</string>
     <string name="profile">个人概况</string>
-    <string name="username_unlogin">你好，用户！\n请先登录！</string>
+    <string name="username_unlogin">你好  用户\n请先点击此处登录！</string>
 </resources>

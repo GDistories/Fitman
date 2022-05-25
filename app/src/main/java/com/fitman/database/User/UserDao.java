@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.fitman.database.MySQLiteHelper;
 
@@ -20,13 +21,21 @@ public class UserDao {
     }
 
     public int insertUser(String username, String password){
-        if(usernameInDatabase(username)){
+        if(isUserExist(username)){
             //用户已位于数据库中
             return -2;
         }
         ContentValues values = new ContentValues();
         values.put("username",username);
         values.put("password",password);
+        values.put("firstName","");
+        values.put("lastName","");
+        values.put("phoneNum","");
+        values.put("email","");
+        values.put("gender","");
+        values.put("height", "");
+        values.put("weight", "");
+        values.put("birthday", "");
 
         long id = sqLiteDatabase.insert("users",null,values);
         if(id>0){
@@ -39,7 +48,7 @@ public class UserDao {
         return id > 0;
     }
 
-    public boolean usernameInDatabase(String username){
+    public boolean isUserExist(String username){
         Cursor cursor = sqLiteDatabase.query("users", null,"username=?", new String[]{username},null,null,null);
         return cursor.moveToNext();
     }
@@ -49,8 +58,8 @@ public class UserDao {
         return cursor.moveToNext();
     }
 
-    public UserBean queryUserByUsernameAndPassword(String username, String password){
-        Cursor cursor = sqLiteDatabase.query("users", null,"username=? AND password=?", new String[]{username, password},null,null,null);
+    public UserBean queryUserByUsername(String username){
+        Cursor cursor = sqLiteDatabase.query("users", null,"username=?", new String[]{username},null,null,null);
 
         UserBean userBean = new UserBean();
         while (cursor.moveToNext()){
@@ -209,10 +218,18 @@ public class UserDao {
         return "";
     }
 
-    public boolean updateBirthday(String username, Date newBirthday){
+    public boolean updateBirthdayByDate(String username, Date newBirthday){
         ContentValues values = new ContentValues();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         values.put("birthday", dateFormat.format(newBirthday));
+
+        long id = sqLiteDatabase.update("users",values,"username=?", new String[]{username});
+        return id > 0;
+    }
+
+    public boolean updateBirthdayByString(String username, String newBirthday){
+        ContentValues values = new ContentValues();
+        values.put("birthday", newBirthday);
 
         long id = sqLiteDatabase.update("users",values,"username=?", new String[]{username});
         return id > 0;
@@ -223,6 +240,7 @@ public class UserDao {
         Cursor cursor = sqLiteDatabase.query("users", new String[]{"birthday"},"username=?", new String[]{username},null,null,null);
         if (cursor.moveToNext()){
             try {
+                Log.e("TAG", cursor.getString(0));
                 return dateFormat.parse(cursor.getString(0));
             } catch (ParseException e) {
                 e.printStackTrace();

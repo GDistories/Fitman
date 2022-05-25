@@ -89,6 +89,9 @@ public class BaseActivity extends AppCompatActivity {
         return SharedPreferencesUtils.getParam("isLogin","false").equals("true");
     }
 
+    public String getUsername(){
+        return SharedPreferencesUtils.getParam("username","");
+    }
 
 
 

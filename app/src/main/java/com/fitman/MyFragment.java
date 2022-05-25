@@ -47,12 +47,16 @@ public class MyFragment extends BaseFragment {
             im_profile.setImageResource(R.drawable.defaultprofilephoto);
             tv_username.setText(userDao.getLastName(getUsername())+" "+userDao.getFirstName(getUsername()));
             im_sex.setVisibility(View.VISIBLE);
-            if(userDao.getGender(getUsername()).equals("female")){
-                im_sex.setImageResource(R.drawable.ic_sex_female);
-            } else if (userDao.getGender(getUsername()).equals("male")){
-                im_sex.setImageResource(R.drawable.ic_sex_male);
-            } else {
-                im_sex.setVisibility(View.GONE);
+            switch (userDao.getGender(getUsername())) {
+                case "":
+                    im_sex.setVisibility(View.GONE);
+                    break;
+                case "Female":
+                    im_sex.setImageResource(R.drawable.ic_sex_female);
+                    break;
+                case "Male":
+                    im_sex.setImageResource(R.drawable.ic_sex_male);
+                    break;
             }
         }else {
             //未登录
