@@ -20,7 +20,8 @@ public class SettingActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         showActionBar();
-        setActionBarTitle("Setting");
+        //TODO 返回按钮失效？
+        setActionBarTitle(getString(R.string.setting));
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()

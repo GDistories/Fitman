@@ -21,7 +21,6 @@
             android:name=".NavigationBottomActivity"
             android:exported="true"
             android:label="@string/title_activity_navigation_bottom"
-            android:launchMode="singleTask"
             />
         <activity
             android:name=".AboutActivity"
@@ -31,8 +30,7 @@
             android:exported="true" />
         <activity
             android:name=".SettingActivity"
-            android:exported="true"
-            android:launchMode="singleTask" />
+            android:exported="true" />
         <activity
             android:name=".StartScreenActivity"
             android:exported="true">

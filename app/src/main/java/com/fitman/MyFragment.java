@@ -28,7 +28,6 @@ public class MyFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), SettingActivity.class));
-                getActivity().finish();
             }
         });
 
