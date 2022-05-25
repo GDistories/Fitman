@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitman">
         <activity
+            android:name=".FeedbackActivity"
+            android:exported="false" />
+        <activity
             android:name=".MyDataActivity"
             android:exported="false" />
         <activity

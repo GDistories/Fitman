@@ -85,6 +85,10 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public Boolean isLogin(){
+        return SharedPreferencesUtils.getParam("isLogin","false").equals("true");
+    }
+
 
 
 

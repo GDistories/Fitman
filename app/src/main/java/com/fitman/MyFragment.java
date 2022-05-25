@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.fitman.utils.SharedPreferencesUtils;
 
 
-public class MyFragment extends Fragment {
+public class MyFragment extends BaseFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,13 +31,14 @@ public class MyFragment extends Fragment {
         im_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(SharedPreferencesUtils.getParam("isLogin","false").equals("true")){
+                if(isLogin()){
                     Intent intent = new Intent(getActivity(), UserProfileActivity.class);
                     startActivity(intent);
             }
                 else{
                     Intent intent = new Intent(getActivity(), LoginActivity.class);
                     startActivity(intent);
+//                    getActivity().finish();
                 }
             }
         });
@@ -46,13 +47,14 @@ public class MyFragment extends Fragment {
         tv_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(SharedPreferencesUtils.getParam("isLogin","false").equals("true")){
+                if(isLogin()){
                     Intent intent = new Intent(getActivity(), UserProfileActivity.class);
                     startActivity(intent);
                 }
                 else{
                     Intent intent = new Intent(getActivity(), LoginActivity.class);
                     startActivity(intent);
+//                    getActivity().finish();
                 }
             }
         });
@@ -61,13 +63,14 @@ public class MyFragment extends Fragment {
         tv_myData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(SharedPreferencesUtils.getParam("isLogin","false").equals("true")){
+                if(isLogin()){
                     Intent intent = new Intent(getActivity(), MyDataActivity.class);
                     startActivity(intent);
                 }
                 else{
                     Intent intent = new Intent(getActivity(), LoginActivity.class);
                     startActivity(intent);
+//                    getActivity().finish();
                 }
             }
         });
@@ -76,13 +79,14 @@ public class MyFragment extends Fragment {
         tv_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(SharedPreferencesUtils.getParam("isLogin","false").equals("true")){
+                if(isLogin()){
                     Intent intent = new Intent(getActivity(), UserProfileActivity.class);
                     startActivity(intent);
                 }
                 else{
                     Intent intent = new Intent(getActivity(), LoginActivity.class);
                     startActivity(intent);
+//                    getActivity().finish();
                 }
             }
         });
