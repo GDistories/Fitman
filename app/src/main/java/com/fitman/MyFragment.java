@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fitman.database.User.UserBean;
+import com.fitman.database.User.UserDao;
 import com.fitman.utils.SharedPreferencesUtils;
 
 
 public class MyFragment extends BaseFragment {
+    private static final String TAG = "MyFragment";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,8 +30,39 @@ public class MyFragment extends BaseFragment {
     @Override
     public void onStart() {
         super.onStart();
-
         ImageView im_profile = getView().findViewById(R.id.im_profile);
+        TextView tv_username = getView().findViewById(R.id.tv_username);
+        ImageView im_sex = getView().findViewById(R.id.im_sex);
+        TextView tv_myData = getView().findViewById(R.id.tv_myData);
+        TextView tv_profile = getView().findViewById(R.id.tv_profile);
+        TextView tv_setting = getActivity().findViewById(R.id.txt_setting);
+        TextView tv_update = getActivity().findViewById(R.id.txt_update);
+        TextView tv_about = getActivity().findViewById(R.id.txt_about);
+
+        UserDao userDao = new UserDao(getActivity());
+
+        if (isLogin()){
+            //已登录
+            Log.e(TAG, "Login");
+            im_profile.setImageResource(R.drawable.defaultprofilephoto);
+            tv_username.setText(getString(R.string.username_unlogin));
+            im_sex.setVisibility(View.VISIBLE);
+            if(userDao.getGender(getUsername()).equals("female")){
+                im_sex.setImageResource(R.drawable.ic_sex_female);
+            } else if (userDao.getGender(getUsername()).equals("male")){
+                im_sex.setImageResource(R.drawable.ic_sex_male);
+            } else {
+                im_sex.setVisibility(View.GONE);
+            }
+        }else {
+            //未登录
+            Log.e(TAG, "UnLogin");
+            im_profile.setImageResource(R.drawable.default_profile_pic);
+            tv_username.setText(getString(R.string.username_unlogin));
+            im_sex.setVisibility(View.GONE);
+        }
+
+
         im_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +78,7 @@ public class MyFragment extends BaseFragment {
             }
         });
 
-        TextView tv_username = getView().findViewById(R.id.tv_username);
+
         tv_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +94,6 @@ public class MyFragment extends BaseFragment {
             }
         });
 
-        TextView tv_myData = getView().findViewById(R.id.tv_myData);
         tv_myData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +109,6 @@ public class MyFragment extends BaseFragment {
             }
         });
 
-        TextView tv_profile = getView().findViewById(R.id.tv_profile);
         tv_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +124,6 @@ public class MyFragment extends BaseFragment {
             }
         });
 
-        TextView tv_setting = getActivity().findViewById(R.id.txt_setting);
         tv_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +131,6 @@ public class MyFragment extends BaseFragment {
             }
         });
 
-        TextView tv_update = getActivity().findViewById(R.id.txt_update);
         tv_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +139,6 @@ public class MyFragment extends BaseFragment {
             }
         });
 
-        TextView tv_about = getActivity().findViewById(R.id.txt_about);
         tv_about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
