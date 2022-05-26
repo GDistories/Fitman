@@ -34,15 +34,19 @@ public class UserProfileActivity extends BaseActivity {
     protected void onStart() {
         super.onStart();
         UserDao userDao = new UserDao(this);
+        Button btn_logout = findViewById(R.id.btn_logout);
         //TODO
 
-        SharedPreferencesUtils.setParam("isRegistered", "false");
-        Button btn_logout = findViewById(R.id.btn_logout);
         if(SharedPreferencesUtils.getParam("isLogin","").equals("false"))
         {
             btn_logout.setVisibility(View.INVISIBLE);
         }else{
-            btn_logout.setVisibility(View.VISIBLE);
+            if (SharedPreferencesUtils.getParam("isRegistered", "false").equals("true"))
+            {
+                btn_logout.setVisibility(View.INVISIBLE);
+            }else{
+                btn_logout.setVisibility(View.VISIBLE);
+            }
         }
 
         NumberPicker np_height = findViewById(R.id.np_height);

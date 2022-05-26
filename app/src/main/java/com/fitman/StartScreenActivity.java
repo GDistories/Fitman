@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.fitman.database.Attendance.AttendanceDao;
 import com.fitman.database.Step.StepDao;
 import com.fitman.database.User.UserDao;
 
@@ -50,6 +51,11 @@ public class StartScreenActivity extends BaseActivity {
             } else {
                 Log.e(TAG, "onCreate: step detector sensor is not available");
             }
+//            AttendanceDao attendanceDao = new AttendanceDao(this);
+//            attendanceDao.insertAttendance(getUsername(), "2022-5-24", "2022-5");
+//            attendanceDao.deleteAttendance(getUsername(), "2022-5-26");
+
+
         }
 
 

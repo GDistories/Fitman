@@ -4,11 +4,158 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DailyAttendanceFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is attendance fragment" />
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:background="@color/whiter_color">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:background="@color/whiter_color">
 
+            <ImageView
+                android:id="@+id/sign_calendar_card_left_iv"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/left_last_month_img"
+                android:scaleType="centerInside"
+                android:background="@drawable/button_default_press_style" />
+
+            <TextView
+                android:id="@+id/sign_calendar_card_current_day_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/text_black_color"/>
+
+            <ImageView
+                android:id="@+id/sign_calendar_card_right_iv"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/right_next_month_img"
+                android:background="@drawable/button_default_press_style"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sign_calendar_today_tv"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="@string/today"
+            android:textColor="#93b300"
+            android:background="@drawable/button_default_press_style"/>
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@color/whiter_color">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical"
+            android:background="@color/white">
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="@string/today"-->
+<!--                android:gravity="center"/>-->
+            <Button
+                android:id="@+id/btn_sign"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/sign_in_today"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/sunday"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/monday"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/tuesday"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/wednesday"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/thursday"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/friday"
+                android:textSize="14sp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/saturday"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <com.fitman.views.CalendarCardView
+            android:id="@+id/sign_calendar_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</LinearLayout>
 </FrameLayout>

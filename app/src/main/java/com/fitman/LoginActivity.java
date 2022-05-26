@@ -33,7 +33,7 @@ public class LoginActivity extends BaseActivity {
         showActionBar();
         setActionBarTitle(getString(R.string.login_title));
 
-
+        SharedPreferencesUtils.setParam("isRegistered", "false");
         //LOGO进场动画
         logoAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation_login);
         disappearAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation_disappear);

@@ -71,5 +71,21 @@
     <string name="verification_code_send_toast">Your verification code is: </string>
     <string name="username_not_exist">The username does not exist</string>
     <string name="update_successfully">Update Successfully</string>
+    <string name="today">Today</string>
+    <string name="attendance_string_1">You have signed in for </string>
+    <string name="attendance_string_2"> days this month</string>
+    <string name="sunday">Sun</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sign_in_today">Sign in Today</string>
+    <string name="already_signin">You have signed in today</string>
+    <string name="sign_in_fail">Sign in failed</string>
+    <string name="sign_in_success">Sign in successfully</string>
+    <string name="attendance_already_exist">Attendance is already in the database</string>
+    <string name="not_login">You are not logged in, please login first</string>
 
 </resources>
