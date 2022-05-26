@@ -1,20 +1,23 @@
 package com.fitman;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fitman.database.User.UserDao;
+import com.fitman.utils.SharedPreferencesUtils;
 
 public class SignUpActivity extends BaseActivity {
-    Animation logoAnimation;
+    Animation logoAnimation, disappearAnimation, appearAnimation;
     ImageView logo_login;
+    TextView tv_sign_up;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +31,30 @@ public class SignUpActivity extends BaseActivity {
         showActionBar();
         setActionBarTitle(getString(R.string.login_title));
 
+
         //LOGO进场动画
         logoAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation_login);
+        disappearAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation_disappear);
+        appearAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation_appear);
         logo_login = findViewById(R.id.logo_login);
+        tv_sign_up = findViewById(R.id.tv_sign_up);
+        logo_login.setVisibility(View.VISIBLE);
+        tv_sign_up.setVisibility(View.INVISIBLE);
         logo_login.setAnimation(logoAnimation);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                logo_login.setAnimation(disappearAnimation);
+                logo_login.setVisibility(View.INVISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        tv_sign_up.setVisibility(View.VISIBLE);
+                        tv_sign_up.setAnimation(appearAnimation);
+                    }
+                }, 300);
+            }
+        }, 1500);
 
 
     }
@@ -67,9 +90,12 @@ public class SignUpActivity extends BaseActivity {
 
         userDao.insertUser(username, password);
         Toast.makeText(this, getString(R.string.sign_up_success), Toast.LENGTH_SHORT).show();
+        SharedPreferencesUtils.setParam("isRegistered", "true");
+        startActivity(new Intent(this, UserProfileActivity.class));
         finish();
 
         //TODO 跳转到用户信息界面填信息，再跳到登录界面
+
 
     }
 }

@@ -2,6 +2,7 @@ package com.fitman;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -15,8 +16,9 @@ import com.fitman.utils.SharedPreferencesUtils;
 
 
 public class LoginActivity extends BaseActivity {
-    Animation logoAnimation;
+    Animation logoAnimation, disappearAnimation, appearAnimation;
     ImageView logo_login;
+    TextView tv_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +33,32 @@ public class LoginActivity extends BaseActivity {
         showActionBar();
         setActionBarTitle(getString(R.string.login_title));
 
+
         //LOGO进场动画
         logoAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation_login);
+        disappearAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation_disappear);
+        appearAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation_appear);
         logo_login = findViewById(R.id.logo_login);
+        tv_login = findViewById(R.id.tv_login);
+        logo_login.setVisibility(View.VISIBLE);
+        tv_login.setVisibility(View.INVISIBLE);
         logo_login.setAnimation(logoAnimation);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                logo_login.setAnimation(disappearAnimation);
+                logo_login.setVisibility(View.INVISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        tv_login.setVisibility(View.VISIBLE);
+                        tv_login.setAnimation(appearAnimation);
+                    }
+                }, 300);
+            }
+        }, 1500);
+
+
 
         TextView forgot_password = findViewById(R.id.tv_forgot_password);
         TextView register = findViewById(R.id.tv_register);

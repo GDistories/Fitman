@@ -2,9 +2,11 @@ package com.fitman;
 
 import androidx.annotation.IdRes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.RadioButton;
@@ -33,7 +35,16 @@ public class UserProfileActivity extends BaseActivity {
         super.onStart();
         UserDao userDao = new UserDao(this);
         //TODO
-//        SharedPreferencesUtils.setParam("isLogin","false");
+
+        SharedPreferencesUtils.setParam("isRegistered", "false");
+        Button btn_logout = findViewById(R.id.btn_logout);
+        if(SharedPreferencesUtils.getParam("isLogin","").equals("false"))
+        {
+            btn_logout.setVisibility(View.INVISIBLE);
+        }else{
+            btn_logout.setVisibility(View.VISIBLE);
+        }
+
         NumberPicker np_height = findViewById(R.id.np_height);
         NumberPicker np_weight = findViewById(R.id.np_weight);
         NumberPicker np_year = findViewById(R.id.np_year);
@@ -49,37 +60,41 @@ public class UserProfileActivity extends BaseActivity {
         RadioButton rb_female = findViewById(R.id.rb_female);
 
         //从数据库读取数据
-        UserBean userBean = userDao.queryUserByUsername(getUsername());
-        if(!userBean.getFirstName().isEmpty()){
-            firstName.setText(userBean.getFirstName());
-        }
-        if(!userBean.getLastName().isEmpty()){
-            lastName.setText(userBean.getLastName());
-        }
-        if(!userBean.getEmail().isEmpty()){
-            email.setText(userBean.getEmail());
-        }
-        if(!userBean.getPhone().isEmpty()){
-            phone.setText(userBean.getPhone());
-        }
-        if(!userBean.getGender().isEmpty()) {
-            if (userBean.getGender().equals("Male")) {
-                rb_male.setChecked(true);
-            } else if (userBean.getGender().equals("Female")) {
-                rb_female.setChecked(true);
+        if(SharedPreferencesUtils.getParam("isLogin","").equals("true"))
+        {
+            UserBean userBean = userDao.queryUserByUsername(getUsername());
+            if(!userBean.getFirstName().isEmpty()){
+                firstName.setText(userBean.getFirstName());
+            }
+            if(!userBean.getLastName().isEmpty()){
+                lastName.setText(userBean.getLastName());
+            }
+            if(!userBean.getEmail().isEmpty()){
+                email.setText(userBean.getEmail());
+            }
+            if(!userBean.getPhone().isEmpty()){
+                phone.setText(userBean.getPhone());
+            }
+            if(!userBean.getGender().isEmpty()) {
+                if (userBean.getGender().equals("Male")) {
+                    rb_male.setChecked(true);
+                } else if (userBean.getGender().equals("Female")) {
+                    rb_female.setChecked(true);
+                }
+            }
+            if (!userBean.getHeight().isEmpty()){
+                np_height.setValue(Integer.parseInt(userBean.getHeight()));
+            }
+            if (!userBean.getWeight().isEmpty()){
+                np_weight.setValue(Integer.parseInt(userBean.getWeight()));
             }
         }
-        if (!userBean.getHeight().isEmpty()){
-            np_height.setValue(Integer.parseInt(userBean.getHeight()));
-        }
-        if (!userBean.getWeight().isEmpty()){
-            np_weight.setValue(Integer.parseInt(userBean.getWeight()));
-        }
+
 
         np_height.setMinValue(0);
         np_height.setMaxValue(300);
         String height = userDao.getHeight(getUsername());
-        if (height != null && !height.isEmpty()) {
+        if (height != null && !height.isEmpty() && SharedPreferencesUtils.getParam("isLogin","").equals("true")) {
             np_height.setValue(Integer.parseInt(height));
         }else {
             np_height.setValue(170);
@@ -95,7 +110,7 @@ public class UserProfileActivity extends BaseActivity {
         np_weight.setMinValue(0);
         np_weight.setMaxValue(300);
         String weight = userDao.getWeight(getUsername());
-        if (weight != null && !weight.isEmpty()) {
+        if (weight != null && !weight.isEmpty() && SharedPreferencesUtils.getParam("isLogin","").equals("true")) {
             np_weight.setValue(Integer.parseInt(weight));
         }else {
             np_weight.setValue(60);
@@ -118,7 +133,7 @@ public class UserProfileActivity extends BaseActivity {
 
 
 
-        if (userDao.getBirthday(getUsername()) != null){
+        if (userDao.getBirthday(getUsername()) != null && SharedPreferencesUtils.getParam("isLogin","").equals("true")){
             Date birth = userDao.getBirthday(getUsername());
             Calendar birthday = Calendar.getInstance();
             birthday.setTime(birth);
@@ -192,6 +207,10 @@ public class UserProfileActivity extends BaseActivity {
         userDao.updateWeight(username, SharedPreferencesUtils.getParam("weight", ""));
         userDao.updateBirthdayByString(username, SharedPreferencesUtils.getParam("birthday", ""));
         Toast.makeText(this, "Update Successfully", Toast.LENGTH_SHORT).show();
+        if(SharedPreferencesUtils.getParam("isRegistered", "").equals("true")){
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
         finish();
     }
 

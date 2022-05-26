@@ -54,5 +54,21 @@
     <string name="submit">submit</string>
     <string name="cancel">cancel</string>
     <string name="log_out">Log out</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="verification_code">Code</string>
+    <string name="send">Send</string>
+    <string name="verification_code_empty">Please fill in the verification code</string>
+    <string name="new_password_empty">Please fill in the new password</string>
+    <string name="confirm_new_password_empty">Please fill in the confirmation password</string>
+    <string name="new_password_not_equal">The new password and the confirmation password are not the same</string>
+    <string name="reset_password_success">Reset password success!</string>
+    <string name="reset_password_fail">Reset password failed!</string>
+    <string name="verification_code_error">Verification code error!</string>
+    <string name="verification_code_send_fail">Verification code send failed!</string>
+    <string name="verification_code_sent">Code has sent</string>
+    <string name="verification_code_send_toast">Your verification code is: </string>
+    <string name="username_not_exist">The username does not exist</string>
 
 </resources>
