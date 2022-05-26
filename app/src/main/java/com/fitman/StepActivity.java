@@ -1,18 +1,17 @@
 package com.fitman;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.fitman.utils.SharedPreferencesUtils;
+
 import java.util.List;
 
-public class StepActivity extends AppCompatActivity {
+public class StepActivity extends BaseActivity {
     protected SensorManager sensorManager;
-
-
+    private static final String TAG = "StepActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +19,20 @@ public class StepActivity extends AppCompatActivity {
         setContentView(R.layout.activity_step);
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        List<Sensor> list = sensorManager.getSensorList(Sensor.TYPE_ALL);
-        for (Sensor sensor : list) {
-            Log.e("sensor", sensor.getName());
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null) {
+            Log.e(TAG, "onCreate: step counter sensor is available");
+            SharedPreferencesUtils.setParam("step_counter_sensor", "true");
+        } else {
+            Log.e(TAG, "onCreate: step counter sensor is not available");
+            SharedPreferencesUtils.setParam("step_counter_sensor", "false");
+        }
+
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null) {
+            Log.e(TAG, "onCreate: step detector sensor is available");
+            SharedPreferencesUtils.setParam("step_detector_sensor", "true");
+        } else {
+            Log.e(TAG, "onCreate: step detector sensor is not available");
+            SharedPreferencesUtils.setParam("step_detector_sensor", "false");
         }
     }
 

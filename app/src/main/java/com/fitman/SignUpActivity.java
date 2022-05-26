@@ -88,13 +88,13 @@ public class SignUpActivity extends BaseActivity {
             return;
         }
 
-        userDao.insertUser(username, password);
-        Toast.makeText(this, getString(R.string.sign_up_success), Toast.LENGTH_SHORT).show();
-        SharedPreferencesUtils.setParam("isRegistered", "true");
-        startActivity(new Intent(this, UserProfileActivity.class));
-        finish();
+        if(userDao.insertUser(username, password) == 1){
+            Toast.makeText(this, getString(R.string.sign_up_success), Toast.LENGTH_SHORT).show();
+            SharedPreferencesUtils.setParam("isRegistered", "true");
+            startActivity(new Intent(this, UserProfileActivity.class));
+            finish();
+        }
 
-        //TODO 跳转到用户信息界面填信息，再跳到登录界面
 
 
     }

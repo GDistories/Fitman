@@ -34,17 +34,22 @@ public class StartScreenActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null){
-            Log.e(TAG, "onCreate: step counter sensor is available");
-        }else{
-            Log.e(TAG, "onCreate: step counter sensor is not available");
-        }
 
-        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null){
-            Log.e(TAG, "onCreate: step detector sensor is available");
-        }else{
-            Log.e(TAG, "onCreate: step detector sensor is not available");
+
+        {
+            //TODO:Debug
+            SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+            if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null) {
+                Log.e(TAG, "onCreate: step counter sensor is available");
+            } else {
+                Log.e(TAG, "onCreate: step counter sensor is not available");
+            }
+
+            if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null) {
+                Log.e(TAG, "onCreate: step detector sensor is available");
+            } else {
+                Log.e(TAG, "onCreate: step detector sensor is not available");
+            }
         }
 
 

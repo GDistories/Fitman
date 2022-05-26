@@ -47,6 +47,17 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS users");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS steps");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS weights");
+        onCreate(sqLiteDatabase);
     }
+
+    public void dropUserTable(SQLiteDatabase sqLiteDatabase){
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS users");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS steps");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS weights");
+        onCreate(sqLiteDatabase);
+    }
+
 }

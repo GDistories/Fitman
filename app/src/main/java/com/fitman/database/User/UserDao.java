@@ -20,6 +20,11 @@ public class UserDao {
         sqLiteDatabase = mySQLiteHelper.getWritableDatabase();
     }
 
+    public void deleteUserTable(Context context){
+        MySQLiteHelper mySQLiteHelper = new MySQLiteHelper(context);
+        mySQLiteHelper.dropUserTable(sqLiteDatabase);
+    }
+
     public int insertUser(String username, String password){
         if(isUserExist(username)){
             //用户已位于数据库中
