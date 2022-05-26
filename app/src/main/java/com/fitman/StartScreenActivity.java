@@ -1,6 +1,8 @@
 package com.fitman;
 
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -15,6 +17,7 @@ import com.fitman.database.Step.StepDao;
 import com.fitman.database.User.UserDao;
 
 import java.util.Date;
+import java.util.List;
 
 public class StartScreenActivity extends BaseActivity {
 
@@ -31,6 +34,18 @@ public class StartScreenActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null){
+            Log.e(TAG, "onCreate: step counter sensor is available");
+        }else{
+            Log.e(TAG, "onCreate: step counter sensor is not available");
+        }
+
+        if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null){
+            Log.e(TAG, "onCreate: step detector sensor is available");
+        }else{
+            Log.e(TAG, "onCreate: step detector sensor is not available");
+        }
 
 
         super.onCreate(savedInstanceState);
@@ -38,25 +53,6 @@ public class StartScreenActivity extends BaseActivity {
         setContentView(R.layout.activity_start_screen);
         hideStatusAndActionBar();
         Button btn_skip = findViewById(R.id.btn_skip);
-
-//        UserDao userDao = new UserDao(this);
-//        Integer t = userDao.insertUser("gao", "test");
-//        Log.e(TAG, t.toString() );
-//        Date date = new Date();
-//        userDao.updateBirthday("gao", date);
-//        userDao.updateEmail("gao", "111@111.com");
-//        userDao.updateGender("gao", "male");
-//        userDao.updateFirstName("gao", "first");
-//        userDao.updateLastName("gao", "last");
-//        userDao.updateHeight("gao", "175cm");
-//        userDao.updateWeight("gao", "60kg");
-//        userDao.updatePhone("gao", "186639");
-//        Log.e(TAG, userDao.getUserIdByUsername("gao").toString());
-//        Log.e(TAG, userDao.queryUserByUsernameAndPassword("gao", "test").toString());
-//
-//        StepDao stepDao = new StepDao(this);
-//        Integer step = stepDao.insertStep("2022");
-//        Log.e(TAG, step.toString());
         
         
 

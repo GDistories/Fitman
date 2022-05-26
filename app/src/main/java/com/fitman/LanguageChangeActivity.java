@@ -26,11 +26,7 @@ public class LanguageChangeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language_change);
 
-//        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-//        List<Sensor> list = sensorManager.getSensorList(Sensor.TYPE_ALL);
-//        for (Sensor sensor : list) {
-//            Log.e("sensor", sensor.getName());
-//        }
+
         //TODO
     }
 
