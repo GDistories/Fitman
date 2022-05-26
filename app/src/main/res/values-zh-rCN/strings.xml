@@ -67,4 +67,20 @@
     <string name="username_not_exist">此用户不存在</string>
     <string name="developer">开发者\n高加祥\nSWE1909468</string>
     <string name="update_successfully">更新成功</string>
+    <string name="today">今天</string>
+    <string name="attendance_string_1">您本月已签到</string>
+    <string name="attendance_string_2">天</string>
+    <string name="sunday">日</string>
+    <string name="monday">一</string>
+    <string name="tuesday">二</string>
+    <string name="wednesday">三</string>
+    <string name="thursday">四</string>
+    <string name="friday">五</string>
+    <string name="saturday">六</string>
+    <string name="sign_in_today">今日签到</string>
+    <string name="already_signin">你今日已签到</string>
+    <string name="sign_in_fail">签到失败</string>
+    <string name="sign_in_success">签到成功</string>
+    <string name="attendance_already_exist">你今日已签到</string>
+    <string name="not_login">您尚未登录，请先登录</string>
 </resources>

@@ -67,4 +67,20 @@
     <string name="username_hint">1</string>
     <string name="developer">1</string>
     <string name="update_successfully">1</string>
+    <string name="not_login">1</string>
+    <string name="attendance_already_exist">1</string>
+    <string name="sign_in_success">1</string>
+    <string name="sign_in_fail">1</string>
+    <string name="already_signin">1</string>
+    <string name="sign_in_today">1</string>
+    <string name="friday">1</string>
+    <string name="thursday">1</string>
+    <string name="saturday">1</string>
+    <string name="wednesday">1</string>
+    <string name="tuesday">1</string>
+    <string name="monday">1</string>
+    <string name="sunday">1</string>
+    <string name="attendance_string_2">1</string>
+    <string name="attendance_string_1">1</string>
+    <string name="today">1</string>
 </resources>
