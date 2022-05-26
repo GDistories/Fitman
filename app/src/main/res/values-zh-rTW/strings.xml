@@ -65,4 +65,6 @@
     <string name="sign_up_for_fitman">1</string>
     <string name="password_hint">1</string>
     <string name="username_hint">1</string>
+    <string name="developer">1</string>
+    <string name="update_successfully">1</string>
 </resources>

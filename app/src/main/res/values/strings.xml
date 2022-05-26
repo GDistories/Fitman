@@ -7,7 +7,7 @@
     <string name="lang_zh_TW">Traditional Chinese(繁体中文)</string>
     <string name="version">Version 1.0</string>
     <string name="back">Back</string>
-    <string name="developer" translatable="false">Developer\nGao Jiaxiang\nSWE1909468</string>
+    <string name="developer">Developer Gao Jiaxiang SWE1909468</string>
     <string name="title_home">Home</string>
     <string name="title_sport">Sports</string>
     <string name="title_fitness">Fitness</string>
@@ -70,5 +70,6 @@
     <string name="verification_code_sent">Code has sent</string>
     <string name="verification_code_send_toast">Your verification code is: </string>
     <string name="username_not_exist">The username does not exist</string>
+    <string name="update_successfully">Update Successfully</string>
 
 </resources>
