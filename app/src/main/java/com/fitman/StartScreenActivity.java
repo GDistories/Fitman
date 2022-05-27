@@ -17,6 +17,7 @@ import com.fitman.database.Attendance.AttendanceDao;
 import com.fitman.database.Step.StepDao;
 import com.fitman.database.User.UserDao;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -38,7 +39,8 @@ public class StartScreenActivity extends BaseActivity {
 
 
         {
-            //TODO:Debug
+            //TODO:权限注册
+
             SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
             if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null) {
                 Log.e(TAG, "onCreate: step counter sensor is available");
@@ -58,6 +60,11 @@ public class StartScreenActivity extends BaseActivity {
 
         }
 
+        List<String> permissionList = getPermission();
+        String[] permission = permissionList.toArray(new String[permissionList.size()]);
+        if(permission.length > 0){
+            requestPermissions(permission, 1);
+        }
 
         super.onCreate(savedInstanceState);
         hideStatusAndActionBar();

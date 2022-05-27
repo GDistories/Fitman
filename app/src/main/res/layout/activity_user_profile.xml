@@ -246,7 +246,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:drawablePadding="10dp"
-            android:text="cm"
+            android:text="@string/cm"
             app:layout_constraintTop_toBottomOf="@+id/line6"
             app:layout_constraintStart_toEndOf="@id/np_height"
             tools:ignore="HardcodedText" />
@@ -293,7 +293,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:drawablePadding="10dp"
-            android:text="kg"
+            android:text="@string/kg"
             app:layout_constraintTop_toBottomOf="@+id/line7"
             app:layout_constraintStart_toEndOf="@id/np_weight"
             tools:ignore="HardcodedText" />

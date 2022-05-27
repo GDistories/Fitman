@@ -87,5 +87,9 @@
     <string name="sign_in_success">Sign in successfully</string>
     <string name="attendance_already_exist">Attendance is already in the database</string>
     <string name="not_login">You are not logged in, please login first</string>
+    <string name="steps">Steps</string>
+    <string name="step">Step</string>
+    <string name="kg">Kg</string>
+    <string name="cm">cm</string>
 
 </resources>
