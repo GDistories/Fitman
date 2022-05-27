@@ -45,7 +45,7 @@ public class MyFragment extends BaseFragment {
             //已登录
             Log.e(TAG, "Login");
             im_profile.setImageResource(R.drawable.defaultprofilephoto);
-            tv_username.setText(userDao.getLastName(getUsername())+" "+userDao.getFirstName(getUsername()));
+            tv_username.setText(userDao.getFirstName(getUsername())+" "+userDao.getLastName(getUsername()));
             im_sex.setVisibility(View.VISIBLE);
             switch (userDao.getGender(getUsername())) {
                 case "":
