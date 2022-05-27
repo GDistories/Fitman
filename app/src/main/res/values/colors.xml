@@ -20,4 +20,6 @@
     <color name="text_black_color">#333333</color>
     <color name="gray_bg">#eaeaea</color>
     <color name="bg_color">#2000</color>
+    <color name = "input_background">#ececec</color>
+    <color name = "primary_text">#212121</color>
 </resources>

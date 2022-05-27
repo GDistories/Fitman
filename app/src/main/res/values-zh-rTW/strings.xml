@@ -83,4 +83,9 @@
     <string name="attendance_string_2">1</string>
     <string name="attendance_string_1">1</string>
     <string name="today">1</string>
+    <string name="steps">1</string>
+    <string name="step">1</string>
+    <string name="kg">1</string>
+    <string name="cm">1</string>
+    <string name="not_sign_in">1</string>
 </resources>

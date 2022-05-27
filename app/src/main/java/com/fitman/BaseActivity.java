@@ -16,6 +16,9 @@ import android.view.View;
 import com.fitman.utils.SharedPreferencesUtils;
 import com.fitman.utils.Util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "BaseActivity";
@@ -97,6 +100,31 @@ public class BaseActivity extends AppCompatActivity {
 
     public boolean hasPermission(Context context, String permission) {
         return context.checkCallingOrSelfPermission(permission)== PackageManager.PERMISSION_GRANTED;
+    }
+
+
+    public List<String> getPermission(){
+        List<String> permission = new ArrayList<String>();
+//            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+//    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+//    <uses-permission android:name="android.permission.INTERNET" />
+        if (!hasPermission(this, "android.permission.ACTIVITY_RECOGNITION")) {
+            permission.add("android.permission.ACTIVITY_RECOGNITION");
+        }
+
+        if (!hasPermission(this, "android.permission.INTERNET")) {
+            permission.add("android.permission.INTERNET");
+        }
+
+        if (!hasPermission(this, "android.permission.READ_EXTERNAL_STORAGE")) {
+            permission.add("android.permission.READ_EXTERNAL_STORAGE");
+        }
+
+        if (!hasPermission(this, "android.permission.WRITE_EXTERNAL_STORAGE")) {
+            permission.add("android.permission.WRITE_EXTERNAL_STORAGE");
+        }
+
+        return permission;
     }
 
 

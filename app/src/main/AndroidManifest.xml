@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitman">
         <activity
+            android:name=".WeightActivity"
+            android:exported="false" />
+        <activity
             android:name=".StepActivity"
             android:exported="false" />
         <activity

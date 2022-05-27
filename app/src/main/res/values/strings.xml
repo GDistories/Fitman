@@ -91,5 +91,6 @@
     <string name="step">Step</string>
     <string name="kg">Kg</string>
     <string name="cm">cm</string>
+    <string name="not_sign_in">You haven\'t signed in today</string>
 
 </resources>

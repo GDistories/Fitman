@@ -140,6 +140,8 @@ public class MyFragment extends BaseFragment {
             public void onClick(View v) {
                 Toast.makeText(getActivity(), R.string.searching_update, Toast.LENGTH_SHORT).show();
                 Toast.makeText(getActivity(), R.string.no_update, Toast.LENGTH_SHORT).show();
+                //TODO DEBUG
+                SharedPreferencesUtils.clear();
             }
         });
 

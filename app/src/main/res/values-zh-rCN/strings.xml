@@ -83,4 +83,9 @@
     <string name="sign_in_success">签到成功</string>
     <string name="attendance_already_exist">你今日已签到</string>
     <string name="not_login">您尚未登录，请先登录</string>
+    <string name="not_sign_in">你今天尚未签到</string>
+    <string name="cm">厘米</string>
+    <string name="kg">千克</string>
+    <string name="step">步数</string>
+    <string name="steps">步</string>
 </resources>
