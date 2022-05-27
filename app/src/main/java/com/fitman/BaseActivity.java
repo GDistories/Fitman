@@ -5,8 +5,10 @@ import static com.fitman.utils.Util.getSysLang;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -93,7 +95,9 @@ public class BaseActivity extends AppCompatActivity {
         return SharedPreferencesUtils.getParam("username","");
     }
 
-
+    public boolean hasPermission(Context context, String permission) {
+        return context.checkCallingOrSelfPermission(permission)== PackageManager.PERMISSION_GRANTED;
+    }
 
 
 
