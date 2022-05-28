@@ -88,4 +88,9 @@
     <string name="kg">1</string>
     <string name="cm">1</string>
     <string name="not_sign_in">1</string>
+    <string name="km">1</string>
+    <string name="duration">1</string>
+    <string name="pace">1</string>
+    <string name="calorie">1</string>
+    <string name="start_running">1</string>
 </resources>
