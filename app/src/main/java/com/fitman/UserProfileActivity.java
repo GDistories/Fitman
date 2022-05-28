@@ -211,7 +211,8 @@ public class UserProfileActivity extends BaseActivity {
         userDao.updateWeight(username, SharedPreferencesUtils.getParam("weight", ""));
         userDao.updateBirthdayByString(username, SharedPreferencesUtils.getParam("birthday", ""));
         Toast.makeText(this, "Update Successfully", Toast.LENGTH_SHORT).show();
-        if(SharedPreferencesUtils.getParam("isRegistered", "").equals("true")){
+        if(SharedPreferencesUtils.getParam("isRegistered", "false").equals("true")){
+            SharedPreferencesUtils.setParam("isRegistered", "false");
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }

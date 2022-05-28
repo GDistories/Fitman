@@ -60,6 +60,7 @@ public class SignUpActivity extends BaseActivity {
     }
 
     public void signUp(View view) {
+
         EditText et_username = findViewById(R.id.et_username);
         EditText et_password = findViewById(R.id.et_password);
         EditText et_password_confirm = findViewById(R.id.et_password_confirm);
@@ -67,6 +68,8 @@ public class SignUpActivity extends BaseActivity {
         String username = et_username.getText().toString();
         String password = et_password.getText().toString();
         String password_confirm = et_password_confirm.getText().toString();
+
+        SharedPreferencesUtils.setParam("username",username);
 
         if (username.isEmpty()) {
             Toast.makeText(this, getString(R.string.username_empty), Toast.LENGTH_SHORT).show();
