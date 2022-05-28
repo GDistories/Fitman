@@ -92,5 +92,10 @@
     <string name="kg">Kg</string>
     <string name="cm">cm</string>
     <string name="not_sign_in">You haven\'t signed in today</string>
+    <string name="km">km</string>
+    <string name="duration">Duration</string>
+    <string name="pace">Pace</string>
+    <string name="calorie">Calorie</string>
+    <string name="start_running">Start Running</string>
 
 </resources>

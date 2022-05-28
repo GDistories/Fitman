@@ -22,4 +22,5 @@
     <color name="bg_color">#2000</color>
     <color name = "input_background">#ececec</color>
     <color name = "primary_text">#212121</color>
+    <color name="background_run">#4d4457</color>
 </resources>

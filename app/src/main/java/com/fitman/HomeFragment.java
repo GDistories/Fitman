@@ -60,6 +60,7 @@ public class HomeFragment extends BaseFragment {
                 }
                 initSteps = Integer.parseInt(SharedPreferencesUtils.getParam("saveInitStep", "-1"));
                 currentSteps = (int) sensorEvent.values[0];
+                SharedPreferencesUtils.setParam("saveCurrentSteps", currentSteps.toString());
                 Log.e(TAG, "initStep: " + initSteps);
                 Log.e(TAG, "currentStep: " + currentSteps);
                 steps = currentSteps - initSteps;
