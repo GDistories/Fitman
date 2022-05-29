@@ -38,14 +38,7 @@ public class SettingActivity extends BaseActivity {
 //                    finish();
 
                     // 1秒钟后重启应用
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage(getApplication().getPackageName());
-                            LaunchIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(LaunchIntent);
-                        }
-                    }, 100);
+                    restartApp(100);
                 }
 
             }

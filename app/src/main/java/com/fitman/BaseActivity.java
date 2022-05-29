@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 
@@ -100,6 +102,17 @@ public class BaseActivity extends AppCompatActivity {
 
     public boolean hasPermission(Context context, String permission) {
         return context.checkCallingOrSelfPermission(permission)== PackageManager.PERMISSION_GRANTED;
+    }
+
+    public void restartApp(Integer delay) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage(getApplication().getPackageName());
+                LaunchIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(LaunchIntent);
+            }
+        }, delay);
     }
 
 
