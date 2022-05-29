@@ -202,6 +202,37 @@ public class UserProfileActivity extends BaseActivity {
         RadioGroup rg_gender = findViewById(R.id.rg_sex);
         RadioButton rb_gender = findViewById(rg_gender.getCheckedRadioButtonId());
 
+        if (username.isEmpty())
+        {
+            Toast.makeText(this, getString(R.string.username_empty), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (firstName.getText().toString().isEmpty())
+        {
+            Toast.makeText(this, getString(R.string.firstname_empty), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (lastName.getText().toString().isEmpty())
+        {
+            Toast.makeText(this, getString(R.string.lastname_empty), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (phone.getText().toString().isEmpty())
+        {
+            Toast.makeText(this, getString(R.string.phone_empty), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (email.getText().toString().isEmpty())
+        {
+            Toast.makeText(this, getString(R.string.email_empty), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (rb_gender == null)
+        {
+            Toast.makeText(this, getString(R.string.gender_empty), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         userDao.updateFirstName(username, firstName.getText().toString());
         userDao.updateLastName(username, lastName.getText().toString());
         userDao.updateEmail(username, email.getText().toString());
