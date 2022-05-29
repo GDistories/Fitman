@@ -36,6 +36,7 @@ public class MyFragment extends BaseFragment {
         TextView tv_myData = getView().findViewById(R.id.tv_myData);
         TextView tv_profile = getView().findViewById(R.id.tv_profile);
         TextView tv_setting = getActivity().findViewById(R.id.txt_setting);
+        TextView tv_feedback = getActivity().findViewById(R.id.txt_feedback);
         TextView tv_update = getActivity().findViewById(R.id.txt_update);
         TextView tv_about = getActivity().findViewById(R.id.txt_about);
 
@@ -81,7 +82,6 @@ public class MyFragment extends BaseFragment {
                 }
             }
         });
-
 
         tv_username.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,13 +135,18 @@ public class MyFragment extends BaseFragment {
             }
         });
 
+        tv_feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), FeedbackActivity.class));
+            }
+        });
+
         tv_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), R.string.searching_update, Toast.LENGTH_SHORT).show();
                 Toast.makeText(getActivity(), R.string.no_update, Toast.LENGTH_SHORT).show();
-                //TODO DEBUG
-                SharedPreferencesUtils.clear();
             }
         });
 
