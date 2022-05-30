@@ -1,15 +1,11 @@
 package com.fitman;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
-import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,17 +30,28 @@ public class RunActivity extends BaseActivity {
     private Double step_now = 0.0;
     private Double K = 0.0;
     private long baseTimer;
-    Handler handler = new Handler();
+    private int num = 0;
+    Handler handlers = new Handler();
     String hh = "00";
     String mm = "00";
     String ss = "00";
     Double duration_second = 0.0;
+    Animation green_animation_enlarge;
+    Animation green_animation_narrow;
+    Animation num_enlarge;
+    Animation num_narrow;
+
+    ImageView green_circle;
+    TextView tv_countdown_num_3;
+    TextView tv_countdown_num_2;
+    TextView tv_countdown_num_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_run);
         hideStatusAndActionBar();
+        num = 0;
 
         //获取初始计步
         step_init = Double.parseDouble(SharedPreferencesUtils.getParam("saveCurrentSteps", "0.0"));
@@ -89,7 +96,14 @@ public class RunActivity extends BaseActivity {
             }
         };
         BasicTimer basicTimer = new BasicTimer(bc);
-        basicTimer.start(1000);
+        run_circle_show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                basicTimer.start(1000);
+            }
+        }, 3300);
+
 
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,7 +162,180 @@ public class RunActivity extends BaseActivity {
 //        }, 0, 1000L);
     }
 
+    public void run_circle_show(){
+        Handler handler = new Handler();
+        green_animation_enlarge = AnimationUtils.loadAnimation(this, R.anim.green_circle_enlarge);
+        green_animation_narrow = AnimationUtils.loadAnimation(this, R.anim.green_circle_narrow);
+        num_enlarge = AnimationUtils.loadAnimation(this, R.anim.num_enlarge);
+        num_narrow = AnimationUtils.loadAnimation(this, R.anim.num_narrow);
 
+        green_circle = findViewById(R.id.green_circle);
+        tv_countdown_num_3 = findViewById(R.id.tv_countdown_num_3);
+        tv_countdown_num_2 = findViewById(R.id.tv_countdown_num_2);
+        tv_countdown_num_1 = findViewById(R.id.tv_countdown_num_1);
+
+        green_circle.setVisibility(View.VISIBLE);
+        green_circle.setAnimation(green_animation_enlarge);
+
+        BasicTimer.BasicTimerCallback bc2 = new BasicTimer.BasicTimerCallback() {
+            @Override
+            public void onTimer() {
+                num++;
+                switch (num){
+                    case 5:
+                        rb_num_enlarge_3();
+                        break;
+                    case 9:
+                        rb_num_narrow_3();
+                        break;
+                    case 15:
+                        rb_num_enlarge_2();
+                        break;
+                    case 19:
+                        rb_num_narrow_2();
+                        break;
+                    case 25:
+                        rb_num_enlarge_1();
+                        break;
+                    case 29:
+                        rb_num_narrow_1();
+                        rb_circle_narrow();
+                        break;
+                }
+            }
+        };
+        BasicTimer basicTimer2 = new BasicTimer(bc2);
+        basicTimer2.start(100);
+//        handler.postDelayed(rb_num_enlarge_3, 500);
+//        handler.postDelayed(rb_num_narrow_3, 1000);
+//        handler.postDelayed(rb_num_enlarge_2, 1400);
+//        handler.postDelayed(rb_num_narrow_2, 1900);
+//        handler.postDelayed(rb_num_enlarge_1, 2300);
+//        handler.postDelayed(rb_num_narrow_1, 2800);
+//        handler.postDelayed(rb_circle_narrow, 2800);
+
+
+
+    }
+
+    public void rb_circle_enlarge() {
+            green_circle.setVisibility(View.VISIBLE);
+            green_circle.setAnimation(green_animation_enlarge);
+    }
+
+    public void getRb_circle_narrow() {
+            green_circle.setAnimation(green_animation_narrow);
+        }
+
+    public void rb_num_enlarge_3() {
+
+            num_enlarge = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_enlarge);
+            tv_countdown_num_3.setVisibility(View.VISIBLE);
+            tv_countdown_num_3.setAnimation(num_enlarge);
+        }
+
+    public void rb_num_enlarge_2() {
+
+            num_enlarge = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_enlarge);
+            tv_countdown_num_2.setVisibility(View.VISIBLE);
+            tv_countdown_num_2.setAnimation(num_enlarge);
+        }
+
+    public void rb_num_enlarge_1() {
+
+            num_enlarge = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_enlarge);
+            tv_countdown_num_1.setVisibility(View.VISIBLE);
+            tv_countdown_num_1.setAnimation(num_enlarge);
+        }
+
+    public void rb_num_narrow_3() {
+
+            num_narrow = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_narrow);
+            tv_countdown_num_3.setAnimation(num_narrow);
+        }
+
+    public void rb_num_narrow_2() {
+
+            num_narrow = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_narrow);
+            tv_countdown_num_2.setAnimation(num_narrow);
+        }
+
+    public void rb_num_narrow_1() {
+
+            num_narrow = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_narrow);
+            tv_countdown_num_1.setAnimation(num_narrow);
+        }
+
+    public void rb_circle_narrow() {
+
+            green_circle.setAnimation(green_animation_narrow);
+        }
+
+
+//    public Runnable rb_circle_enlarge = new Runnable() {
+//        @Override
+//        public void run() {
+//            green_circle.setVisibility(View.VISIBLE);
+//            green_circle.setAnimation(green_animation_enlarge);
+//        }
+//    };
+//    public Runnable getRb_circle_narrow = new Runnable() {
+//        @Override
+//        public void run() {
+//            green_circle.setAnimation(green_animation_narrow);
+//        }
+//    };
+//    public Runnable rb_num_enlarge_3 = new Runnable() {
+//        @Override
+//        public void run() {
+//            num_enlarge = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_enlarge);
+//            tv_countdown_num_3.setVisibility(View.VISIBLE);
+//            tv_countdown_num_3.setAnimation(num_enlarge);
+//        }
+//    };
+//    public Runnable rb_num_enlarge_2 = new Runnable() {
+//        @Override
+//        public void run() {
+//            num_enlarge = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_enlarge);
+//            tv_countdown_num_2.setVisibility(View.VISIBLE);
+//            tv_countdown_num_2.setAnimation(num_enlarge);
+//        }
+//    };
+//    public Runnable rb_num_enlarge_1 = new Runnable() {
+//        @Override
+//        public void run() {
+//            num_enlarge = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_enlarge);
+//            tv_countdown_num_1.setVisibility(View.VISIBLE);
+//            tv_countdown_num_1.setAnimation(num_enlarge);
+//        }
+//    };
+//    public Runnable rb_num_narrow_3 = new Runnable() {
+//        @Override
+//        public void run() {
+//            num_narrow = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_narrow);
+//            tv_countdown_num_3.setAnimation(num_narrow);
+//        }
+//    };
+//    public Runnable rb_num_narrow_2 = new Runnable() {
+//        @Override
+//        public void run() {
+//            num_narrow = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_narrow);
+//            tv_countdown_num_2.setAnimation(num_narrow);
+//        }
+//    };
+//    public Runnable rb_num_narrow_1 = new Runnable() {
+//        @Override
+//        public void run() {
+//            num_narrow = AnimationUtils.loadAnimation(RunActivity.this, R.anim.num_narrow);
+//            tv_countdown_num_1.setAnimation(num_narrow);
+//        }
+//    };
+//    public Runnable rb_circle_narrow = new Runnable() {
+//        @Override
+//        public void run() {
+//            green_circle.setAnimation(green_animation_narrow);
+//        }
+//    };
 
 
 }
