@@ -31,6 +31,7 @@ public class RunActivity extends BaseActivity {
     private Double K = 0.0;
     private long baseTimer;
     private int num = 0;
+    String duration;
     Handler handlers = new Handler();
     String hh = "00";
     String mm = "00";
@@ -79,7 +80,7 @@ public class RunActivity extends BaseActivity {
                 hh = new DecimalFormat("00").format(duration_second / 3600);
                 mm = new DecimalFormat("00").format((duration_second % 3600) / 60);
                 ss = new DecimalFormat("00").format(duration_second % 60);
-                String duration = hh + ":" + mm + ":" + ss;
+                duration = hh + ":" + mm + ":" + ss;
                 if (distance > 0){
                     pace = duration_minute / distance;
                 }
@@ -118,6 +119,11 @@ public class RunActivity extends BaseActivity {
         btn_stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferencesUtils.setParam("duration_record", duration);
+                SharedPreferencesUtils.setParam("distance_record", distance.toString());
+                SharedPreferencesUtils.setParam("calories_record", calories.toString());
+                SharedPreferencesUtils.setParam("pace_record", pace.toString());
+                SharedPreferencesUtils.setParam("run_record_username", getUsername());
                 finish();
             }
         });

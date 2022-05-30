@@ -115,5 +115,6 @@
     <string name="not_fill_all">Please fill in all the fields</string>
     <string name="feedback_success">We have received your feedback and thank you for your submission!</string>
     <string name="permission_not_all">The app does not have all permissions!</string>
+    <string name="last_running_record">Last Running Record</string>
 
 </resources>

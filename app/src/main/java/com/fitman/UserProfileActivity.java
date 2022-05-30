@@ -37,18 +37,24 @@ public class UserProfileActivity extends BaseActivity {
         super.onStart();
         UserDao userDao = new UserDao(this);
         Button btn_logout = findViewById(R.id.btn_logout);
-        //TODO
+        Button btn_cancel = findViewById(R.id.btn_cancel);
 
-        if(SharedPreferencesUtils.getParam("isLogin","").equals("false"))
-        {
-            btn_logout.setVisibility(View.INVISIBLE);
-        }else{
-            if (SharedPreferencesUtils.getParam("isRegistered", "false").equals("true"))
-            {
+        if(!SharedPreferencesUtils.getParam("isLogin","").equals("false")) {
+            //未登录
+            if (SharedPreferencesUtils.getParam("isRegistered", "false").equals("true")) {
+                //正在注册
                 btn_logout.setVisibility(View.INVISIBLE);
-            }else{
+                btn_cancel.setVisibility(View.INVISIBLE);
+            } else {
+                //未在注册
                 btn_logout.setVisibility(View.VISIBLE);
+                btn_cancel.setVisibility(View.VISIBLE);
+
             }
+        }
+        else{
+            //未登录
+            btn_logout.setVisibility(View.INVISIBLE);
         }
 
         NumberPicker np_height = findViewById(R.id.np_height);
