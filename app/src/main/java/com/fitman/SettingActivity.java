@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.MenuItem;
 
 public class SettingActivity extends BaseActivity {
     SharedPreferences.OnSharedPreferenceChangeListener listener;
@@ -20,6 +21,7 @@ public class SettingActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         showActionBar();
+        showBackButton();
         //TODO 返回按钮失效？
         setActionBarTitle(getString(R.string.setting));
         if (savedInstanceState == null) {
@@ -52,6 +54,18 @@ public class SettingActivity extends BaseActivity {
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

@@ -102,6 +102,10 @@
     <string name="phone_empty">Phone is empty</string>
     <string name="email_empty">E-mail is empty</string>
     <string name="gender_empty">Gender is empty</string>
+    <string name="bmi">BMI</string>
+    <string name="attendance_times_this_month">Attendance times this month</string>
+    <string name="today_s_steps">Today\'s steps</string>
+    <string name="fill_in_profile_first">Please fill in the profile first!</string>
 
 
 </resources>

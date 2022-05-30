@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -17,7 +18,7 @@ import android.widget.Toast;
 import com.fitman.database.User.UserDao;
 import com.fitman.utils.SharedPreferencesUtils;
 
-public class ForgotPasswordActivity extends AppCompatActivity {
+public class ForgotPasswordActivity extends BaseActivity {
 
     private Button send;
     Animation logoAnimation, disappearAnimation, appearAnimation;
@@ -25,6 +26,9 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
+        showActionBar();
+        showBackButton();
+        setActionBarTitle(getString(R.string.reset_password));
 
         EditText username = findViewById(R.id.et_username);
         EditText password = findViewById(R.id.et_password);
@@ -146,6 +150,18 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         String code = verificationCode.toString();
         SharedPreferencesUtils.setParam("verificationCode", code);
         return code;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

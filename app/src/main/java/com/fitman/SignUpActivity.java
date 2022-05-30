@@ -3,6 +3,7 @@ package com.fitman;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -29,7 +30,8 @@ public class SignUpActivity extends BaseActivity {
     protected void onStart() {
         super.onStart();
         showActionBar();
-        setActionBarTitle(getString(R.string.login_title));
+        setActionBarTitle(getString(R.string.sign_up));
+        showBackButton();
 
 
         //LOGO进场动画
@@ -100,5 +102,16 @@ public class SignUpActivity extends BaseActivity {
 
 
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
