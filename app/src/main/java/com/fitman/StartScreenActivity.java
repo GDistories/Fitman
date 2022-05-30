@@ -95,7 +95,7 @@ public class StartScreenActivity extends BaseActivity {
                     finish();
                 }else
                 {
-                    Toast.makeText(StartScreenActivity.this, getString(R.string.permission_not_all), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(StartScreenActivity.this, getString(R.string.permission_not_all), Toast.LENGTH_SHORT).show();
                     startScreenHandler.postDelayed(this, 1000);
                 }
 
