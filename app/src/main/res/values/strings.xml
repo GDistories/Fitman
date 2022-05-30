@@ -114,6 +114,6 @@
     <string name="phone_number_or_email_address">Phone Number or Email Address</string>
     <string name="not_fill_all">Please fill in all the fields</string>
     <string name="feedback_success">We have received your feedback and thank you for your submission!</string>
-
+    <string name="permission_not_all">The app does not have all permissions!</string>
 
 </resources>

@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fitman.database.Attendance.AttendanceDao;
 import com.fitman.database.Step.StepDao;
@@ -88,9 +89,16 @@ public class StartScreenActivity extends BaseActivity {
         startScreenRunnable = new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(StartScreenActivity.this, NavigationBottomActivity.class);
-                startActivity(intent);
-                finish();
+                if (hasAllPermission()) {
+                    Intent intent = new Intent(StartScreenActivity.this, NavigationBottomActivity.class);
+                    startActivity(intent);
+                    finish();
+                }else
+                {
+                    Toast.makeText(StartScreenActivity.this, getString(R.string.permission_not_all), Toast.LENGTH_SHORT).show();
+                    startScreenHandler.postDelayed(this, 1000);
+                }
+
             }
         };
         startScreenHandler.postDelayed(startScreenRunnable,SPLASH_TIME_OUT);
@@ -110,6 +118,10 @@ public class StartScreenActivity extends BaseActivity {
     }
 
     public void skipStartScreen(View view) {
+        if (!hasAllPermission()) {
+            Toast.makeText(StartScreenActivity.this, getString(R.string.permission_not_all), Toast.LENGTH_SHORT).show();
+            return;
+        }
         startActivity(new Intent(this, NavigationBottomActivity.class));
         startScreenHandler.removeCallbacks(startScreenRunnable);
         skipHandler.removeCallbacks(skipRunnable);

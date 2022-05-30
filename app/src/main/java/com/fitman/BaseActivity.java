@@ -140,6 +140,16 @@ public class BaseActivity extends AppCompatActivity {
         return permission;
     }
 
+    public Boolean hasAllPermission(){
+        List<String> permission = getPermission();
+        for (String p : permission) {
+            if (!hasPermission(this, p)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 }
