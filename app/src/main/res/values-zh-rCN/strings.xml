@@ -93,4 +93,21 @@
     <string name="calorie">卡路里</string>
     <string name="pace">配速</string>
     <string name="duration">时间</string>
+    <string name="feedback_success">我们已收到您的反馈， 感谢您的提交！</string>
+    <string name="not_fill_all">请填写所有字段</string>
+    <string name="phone_number_or_email_address">手机号码或者邮件地址</string>
+    <string name="contact_information">联系方式</string>
+    <string name="description">描述</string>
+    <string name="firstname_empty">请填写名字</string>
+    <string name="lastname_empty">请填写姓氏</string>
+    <string name="phone_empty">请填写电话号码</string>
+    <string name="email_empty">请填写邮件地址</string>
+    <string name="gender_empty">请填写性别</string>
+    <string name="bmi">BMI(身体质量指数)</string>
+    <string name="attendance_times_this_month">" 本月打卡天数"</string>
+    <string name="today_s_steps">今日步数</string>
+    <string name="fill_in_profile_first">请先填写个人概况！</string>
+    <string name="category">反馈类别</string>
+    <string name="functional_issue">功能性问题</string>
+    <string name="comment_or_suggestion">评论或建议</string>
 </resources>
