@@ -116,5 +116,13 @@
     <string name="feedback_success">We have received your feedback and thank you for your submission!</string>
     <string name="permission_not_all">The app does not have all permissions!</string>
     <string name="last_running_record">Last Running Record</string>
+    <string name="fitness_title_1">10 MIN AB WORKOUT</string>
+    <string name="fitness_title_2">10 MIN BEGINNER AB WORKOUT</string>
+    <string name="fitness_title_3">10 MIN SIXPACK WORKOUT</string>
+    <string name="fitness_title_4">20 MIN FULL BODY WORKOUT</string>
+    <string name="fitness_title_5">10 MIN BOOTY BURN</string>
+    <string name="min">min</string>
+    <string name="easy">Easy</string>
+
 
 </resources>
