@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FitnessActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:paddingBottom="20dp"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imageCover"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:src="@drawable/fitness1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </ImageView>
+    <ImageView
+        android:id="@+id/imageGradient"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:src="@drawable/gradient"
+        app:layout_constraintStart_toStartOf="@+id/imageCover"
+        app:layout_constraintTop_toTopOf="@+id/imageCover"
+        app:layout_constraintEnd_toEndOf="@+id/imageCover">
+    </ImageView>
+    <ImageView
+        android:id="@+id/imageStart"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/play_icon"
+        app:layout_constraintTop_toTopOf="@+id/fitness_title"
+        app:layout_constraintBottom_toBottomOf="@+id/fitness_title"
+        app:layout_constraintEnd_toEndOf="@+id/imageCover"
+        android:layout_marginEnd="20dp">
+    </ImageView>
+    <TextView
+        android:id="@+id/fitness_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageCover"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/fitness_title_2"
+        android:textSize="20sp">
+    </TextView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="@+id/imageCover"
+            app:layout_constraintTop_toBottomOf="@+id/imageStart"
+            app:layout_constraintEnd_toEndOf="@+id/imageCover"
+            android:visibility="gone">
+            <cn.jzvd.JzvdStd
+                android:id="@+id/jzvd_Video"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </cn.jzvd.JzvdStd>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fitness_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="500dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout_video"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout_video"
+            android:background="@drawable/card_background"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout_video">
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/fitness_card"
+                app:layout_constraintStart_toStartOf="@id/fitness_card"
+                app:layout_constraintEnd_toEndOf="@id/fitness_card"
+                android:layout_marginTop="50dp">
+
+                <ImageView
+                    android:id="@+id/icon_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:src="@drawable/time_icn" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:gravity="right"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/orange"
+                    android:textSize="17sp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="@string/min"
+                    android:textColor="@color/orange"
+                    android:textSize="17sp"
+                    />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/heart_icn" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="4896"
+                    android:textColor="@color/orange"
+                    android:textSize="17sp"
+                    />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/level_icn" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/easy"
+                    android:textColor="@color/orange"
+                    android:textSize="17sp"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ll"
+                app:layout_constraintStart_toStartOf="@id/fitness_card"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:textSize="30sp"
+                android:text="@string/description" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description"
+                app:layout_constraintStart_toStartOf="@id/fitness_card"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:text="@string/fitness_description_1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
