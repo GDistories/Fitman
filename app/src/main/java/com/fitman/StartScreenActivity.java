@@ -106,6 +106,7 @@ public class StartScreenActivity extends BaseActivity {
     public void skipStartScreen(View view) {
         if (!hasAllPermission()) {
             Toast.makeText(StartScreenActivity.this, getString(R.string.permission_not_all), Toast.LENGTH_SHORT).show();
+            exitApp(2000);
             return;
         }
         if (isFirstStart.equals("true"))

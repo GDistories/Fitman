@@ -115,6 +115,15 @@ public class BaseActivity extends AppCompatActivity {
         }, delay);
     }
 
+    public void exitApp(Integer delay) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                System.exit(0);
+            }
+        }, delay);
+    }
+
 
     public List<String> getPermission(){
         List<String> permission = new ArrayList<String>();
