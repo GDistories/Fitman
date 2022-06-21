@@ -111,4 +111,8 @@
     <string name="functional_issue">功能性问题</string>
     <string name="comment_or_suggestion">评论或建议</string>
     <string name="permission_not_all">应用未获得全部权限！</string>
+    <string name="min">分钟</string>
+    <string name="easy">简单</string>
+    <string name="hard">困难</string>
+    <string name="last_running_record">最近的跑步记录</string>
 </resources>

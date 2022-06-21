@@ -34,48 +34,27 @@ public class StartScreenActivity extends BaseActivity {
     Runnable startScreenRunnable;
     Runnable skipRunnable;
     int times = SPLASH_TIME_OUT/1000;
+    String isFirstStart;
     private static final String TAG = "StartScreenActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-        {
-            //TODO:权限注册
-
-            SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-            if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null) {
-                Log.e(TAG, "onCreate: step counter sensor is available");
-            } else {
-                Log.e(TAG, "onCreate: step counter sensor is not available");
-            }
-
-            if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null) {
-                Log.e(TAG, "onCreate: step detector sensor is available");
-            } else {
-                Log.e(TAG, "onCreate: step detector sensor is not available");
-            }
-            AttendanceDao attendanceDao = new AttendanceDao(this);
-//            attendanceDao.deleteAttendanceTable(this);
-//            attendanceDao.insertAttendance(getUsername(), "2022-5-24", "2022-5");
-            attendanceDao.deleteAttendance(getUsername(), "2022-5-27");
-
-
-        }
-
-        List<String> permissionList = getPermission();
-        String[] permission = permissionList.toArray(new String[permissionList.size()]);
-        if(permission.length > 0){
-            requestPermissions(permission, 1);
-        }
 
         super.onCreate(savedInstanceState);
         hideStatusAndActionBar();
         setContentView(R.layout.activity_start_screen);
         hideStatusAndActionBar();
         Button btn_skip = findViewById(R.id.btn_skip);
-        
-        
+        isFirstStart = SharedPreferencesUtils.getParam("isFirstStart", "true");
+
+        {
+            //TODO:权限注册
+            List<String> permissionList = getPermission();
+            String[] permission = permissionList.toArray(new String[permissionList.size()]);
+            if(permission.length > 0){
+                requestPermissions(permission, 1);
+            }
+        }
 
         logoAnimation1 = AnimationUtils.loadAnimation(this, R.anim.logo_animation_1);
         logoAnimation2 = AnimationUtils.loadAnimation(this, R.anim.logo_animation_2);
@@ -90,9 +69,16 @@ public class StartScreenActivity extends BaseActivity {
             @Override
             public void run() {
                 if (hasAllPermission()) {
-                    Intent intent = new Intent(StartScreenActivity.this, NavigationBottomActivity.class);
+                    Intent intent;
+                    if (isFirstStart.equals("true"))
+                    {
+                        intent = new Intent(StartScreenActivity.this, FirstStartActivity.class);
+                    }else{
+                        intent = new Intent(StartScreenActivity.this, NavigationBottomActivity.class);
+                    }
                     startActivity(intent);
                     finish();
+
                 }else
                 {
 //                    Toast.makeText(StartScreenActivity.this, getString(R.string.permission_not_all), Toast.LENGTH_SHORT).show();
@@ -122,10 +108,17 @@ public class StartScreenActivity extends BaseActivity {
             Toast.makeText(StartScreenActivity.this, getString(R.string.permission_not_all), Toast.LENGTH_SHORT).show();
             return;
         }
-        startActivity(new Intent(this, NavigationBottomActivity.class));
+        if (isFirstStart.equals("true"))
+        {
+            Intent intent = new Intent(StartScreenActivity.this, FirstStartActivity.class);
+            startActivity(intent);
+        }else{
+            startActivity(new Intent(this, NavigationBottomActivity.class));
+        }
         startScreenHandler.removeCallbacks(startScreenRunnable);
         skipHandler.removeCallbacks(skipRunnable);
         finish();
+
     }
 
 }

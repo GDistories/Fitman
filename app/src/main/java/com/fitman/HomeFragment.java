@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -113,12 +114,32 @@ public class HomeFragment extends BaseFragment {
         steps_text = getActivity().findViewById(R.id.tv_step_count);
         TextView weight_text = getActivity().findViewById(R.id.tv_weight_count);
 
-        steps.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), StepActivity.class));
-            }
-        });
+        sensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null) {
+            Log.e(TAG, "onCreate: step counter sensor is available");
+            SharedPreferencesUtils.setParam("step_counter_sensor", "true");
+        } else {
+            Log.e(TAG, "onCreate: step counter sensor is not available");
+            Toast.makeText(getActivity(), getString(R.string.sensornotavailable), Toast.LENGTH_SHORT).show();
+            SharedPreferencesUtils.setParam("step_counter_sensor", "false");
+        }
+
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null) {
+            Log.e(TAG, "onCreate: step detector sensor is available");
+            SharedPreferencesUtils.setParam("step_detector_sensor", "true");
+        } else {
+            Log.e(TAG, "onCreate: step detector sensor is not available");
+            SharedPreferencesUtils.setParam("step_detector_sensor", "false");
+        }
+
+
+        //TODO: Further Improve
+//        steps.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getActivity(), StepActivity.class));
+//            }
+//        });
 
         runnable=new Runnable(){
             @Override
@@ -132,12 +153,14 @@ public class HomeFragment extends BaseFragment {
 
         handler.postDelayed(runnable, 1000);
 
-        weights.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), WeightActivity.class));
-            }
-        });
+        //TODO: Further Improve
+//        weights.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getActivity(), WeightActivity.class));
+//            }
+//        });
+
 
         if(isLogin()){
             CustomDate mCustomDate = new CustomDate();

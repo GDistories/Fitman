@@ -129,6 +129,9 @@
     <string name="fitness_description_3"><![CDATA[NO EXCUSES ♥︎ a quick & intense workout to target your abs. You don\'t need any equipment or weights!! // Werbung \n\nThe video is in full length which means you can just follow whatever I’m doing 30s for each exercise – NO REST IN BETWEEN.\n\nNo Equipment necessary, no breaks and not much space needed :) If you need a break tho - take it! Just don\'t quit! \n__]]></string>
     <string name="fitness_description_4"><![CDATA[NO EXCUSES ♥︎ a Full Body Workout that can do whenever and wherever you like. // Werbung \n\nYou don\'t need any equipment or weights!! Targets the muscles of your whole body and gives you a QUICK SWEAT! \n\nThe video is in full length which means you can just follow whatever I’m doing 30s for each exercise. \nThere are two 1min rests in between. If you need to pause longer - feel free to do so. If you don\'t need a break - skip them! \n\nI recommend switching up your workouts to give your muscles enough time to recover. You can do this workout 2-3x a week and if you want to do be active on the other days: check out my Sixpack, Core & Booty Workout ♥︎\n\n__]]></string>
     <string name="fitness_description_5"><![CDATA[A quick & intense workout to target your butt. You don\'t need any equipment or weights!! // Werbung \n\nI usually train my legs in the gym but I love to do this whenever I\'m traveling or don\'t have time to do a full leg day with weights ♥︎\n\nThe video is in full length which means you can just follow whatever I’m doing! 30s for each exercise. \n\n__]]></string>
-
+    <string name="sensornotavailable">Step Sensor is not available. Step function cannot be used.</string>
+    <string name="we_can_help_you_achieve_it">We can help you achieve it!</string>
+    <string name="do_you_want_to_get_active_in_a_health_way">Do you want to get active in a health way?</string>
+    <string name="get_start">Get Start!</string>
 
 </resources>

@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitman">
         <activity
+            android:name=".FirstStartActivity"
+            android:exported="true" />
+        <activity
             android:name=".FitnessActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true"
@@ -53,9 +56,9 @@
             android:exported="true" />
         <activity
             android:name=".NavigationBottomActivity"
-            android:label="@string/title_activity_navigation_bottom"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true"
+            android:label="@string/title_activity_navigation_bottom"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AboutActivity"

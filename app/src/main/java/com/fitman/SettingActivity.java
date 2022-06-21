@@ -22,7 +22,6 @@ public class SettingActivity extends BaseActivity {
         setContentView(R.layout.activity_setting);
         showActionBar();
         showBackButton();
-        //TODO 返回按钮失效？
         setActionBarTitle(getString(R.string.setting));
         if (savedInstanceState == null) {
             getSupportFragmentManager()

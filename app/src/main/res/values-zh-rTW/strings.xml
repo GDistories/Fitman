@@ -110,4 +110,19 @@
     <string name="phone_number_or_email_address">1</string>
     <string name="not_fill_all">1</string>
     <string name="feedback_success">1</string>
+    <string name="permission_not_all">1</string>
+    <string name="last_running_record">1</string>
+    <string name="fitness_title_1">1</string>
+    <string name="fitness_title_2">1</string>
+    <string name="fitness_title_3">1</string>
+    <string name="fitness_title_4">1</string>
+    <string name="fitness_title_5">1</string>
+    <string name="easy">1</string>
+    <string name="min">1</string>
+    <string name="hard">1</string>
+    <string name="fitness_description_1">1</string>
+    <string name="fitness_description_2">1</string>
+    <string name="fitness_description_3">1</string>
+    <string name="fitness_description_4">1</string>
+    <string name="fitness_description_5">1</string>
 </resources>
