@@ -5,42 +5,345 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FitnessFragment">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<LinearLayout
+    android:paddingBottom="70dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutFitness1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <cn.jzvd.JzvdStd
-            android:id="@+id/jzvdStd6"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
+        android:layout_height="120dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/fitness_video_list"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:id="@+id/fitness_pic_1"
+            android:layout_width="150dp"
+            android:layout_marginStart="5dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/fitness1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-        </cn.jzvd.JzvdStd>
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/fitness_title_1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="@+id/fitness_pic_1"
+            app:layout_constraintStart_toEndOf="@+id/fitness_pic_1"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+        <ImageView
+            android:id="@+id/fitness_time_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/jzvdStd6"
-            app:layout_constraintTop_toBottomOf="@+id/jzvdStd6">
+            android:src="@drawable/time_icn"
+            app:layout_constraintStart_toEndOf="@+id/fitness_pic_1"
+            app:layout_constraintTop_toTopOf="@+id/fitness_pic_1"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_pic_1"
+            android:layout_marginStart="20dp"
+            app:layout_constraintVertical_bias="0.8"/>
 
+        <TextView
+            android:id="@+id/fitness_time_num_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/fitness_time_1"
+            app:layout_constraintTop_toTopOf="@+id/fitness_time_1"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_time_1"
+            android:layout_marginStart="20dp"
+            />
 
-            <!--            TODO-->
-            <Button
-                android:id="@+id/btn_starts"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/min"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/fitness_time_num_1"
+            app:layout_constraintTop_toTopOf="@+id/fitness_time_num_1"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_time_num_1"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </Button>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutFitness2"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/fitness_video_list"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:id="@+id/fitness_pic_2"
+            android:layout_width="150dp"
+            android:layout_marginStart="5dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/fitness2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/fitness_title_2"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="@+id/fitness_pic_2"
+            app:layout_constraintStart_toEndOf="@+id/fitness_pic_2"/>
+
+        <ImageView
+            android:id="@+id/fitness_time_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/time_icn"
+            app:layout_constraintStart_toEndOf="@+id/fitness_pic_2"
+            app:layout_constraintTop_toTopOf="@+id/fitness_pic_2"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_pic_2"
+            android:layout_marginStart="20dp"
+            app:layout_constraintVertical_bias="0.8"/>
+
+        <TextView
+            android:id="@+id/fitness_time_num_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/fitness_time_2"
+            app:layout_constraintTop_toTopOf="@+id/fitness_time_2"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_time_2"
+            android:layout_marginStart="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/min"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/fitness_time_num_2"
+            app:layout_constraintTop_toTopOf="@+id/fitness_time_num_2"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_time_num_2"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutFitness3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/fitness_video_list"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:id="@+id/fitness_pic_3"
+            android:layout_width="150dp"
+            android:layout_marginStart="5dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/fitness3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/fitness_title_3"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="@+id/fitness_pic_3"
+            app:layout_constraintStart_toEndOf="@+id/fitness_pic_3"/>
+
+        <ImageView
+            android:id="@+id/fitness_time_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/time_icn"
+            app:layout_constraintStart_toEndOf="@+id/fitness_pic_3"
+            app:layout_constraintTop_toTopOf="@+id/fitness_pic_3"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_pic_3"
+            android:layout_marginStart="20dp"
+            app:layout_constraintVertical_bias="0.8"/>
+
+        <TextView
+            android:id="@+id/fitness_time_num_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/fitness_time_3"
+            app:layout_constraintTop_toTopOf="@+id/fitness_time_3"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_time_3"
+            android:layout_marginStart="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/min"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/fitness_time_num_3"
+            app:layout_constraintTop_toTopOf="@+id/fitness_time_num_3"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_time_num_3"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutFitness4"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/fitness_video_list"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:id="@+id/fitness_pic_4"
+            android:layout_width="150dp"
+            android:layout_marginStart="5dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/fitness4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/fitness_title_4"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="@+id/fitness_pic_4"
+            app:layout_constraintStart_toEndOf="@+id/fitness_pic_4"/>
+
+        <ImageView
+            android:id="@+id/fitness_time_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/time_icn"
+            app:layout_constraintStart_toEndOf="@+id/fitness_pic_4"
+            app:layout_constraintTop_toTopOf="@+id/fitness_pic_4"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_pic_4"
+            android:layout_marginStart="20dp"
+            app:layout_constraintVertical_bias="0.8"/>
+
+        <TextView
+            android:id="@+id/fitness_time_num_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/fitness_time_4"
+            app:layout_constraintTop_toTopOf="@+id/fitness_time_4"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_time_4"
+            android:layout_marginStart="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/min"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/fitness_time_num_4"
+            app:layout_constraintTop_toTopOf="@+id/fitness_time_num_4"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_time_num_4"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutFitness5"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/fitness_video_list"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:id="@+id/fitness_pic_5"
+            android:layout_width="150dp"
+            android:layout_marginStart="5dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/fitness5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/fitness_title_2"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="@+id/fitness_pic_5"
+            app:layout_constraintStart_toEndOf="@+id/fitness_pic_5"/>
+
+        <ImageView
+            android:id="@+id/fitness_time_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/time_icn"
+            app:layout_constraintStart_toEndOf="@+id/fitness_pic_5"
+            app:layout_constraintTop_toTopOf="@+id/fitness_pic_5"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_pic_5"
+            android:layout_marginStart="20dp"
+            app:layout_constraintVertical_bias="0.8"/>
+
+        <TextView
+            android:id="@+id/fitness_time_num_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/fitness_time_5"
+            app:layout_constraintTop_toTopOf="@+id/fitness_time_5"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_time_5"
+            android:layout_marginStart="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/min"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/fitness_time_num_5"
+            app:layout_constraintTop_toTopOf="@+id/fitness_time_num_5"
+            app:layout_constraintBottom_toBottomOf="@+id/fitness_time_num_5"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+
+</LinearLayout>
+
+</ScrollView>
 
 </FrameLayout>

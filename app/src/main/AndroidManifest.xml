@@ -18,22 +18,24 @@
         android:theme="@style/Theme.Fitman">
         <activity
             android:name=".FitnessActivity"
-            android:exported="false" />
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DeveloperActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RunActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".WeightActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".StepActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="true" />
@@ -51,9 +53,9 @@
             android:exported="true" />
         <activity
             android:name=".NavigationBottomActivity"
+            android:label="@string/title_activity_navigation_bottom"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true"
-            android:label="@string/title_activity_navigation_bottom"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AboutActivity"
