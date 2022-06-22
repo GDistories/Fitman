@@ -120,9 +120,9 @@ public class RunActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferencesUtils.setParam("duration_record", duration);
-                SharedPreferencesUtils.setParam("distance_record", distance.toString());
-                SharedPreferencesUtils.setParam("calories_record", calories.toString());
-                SharedPreferencesUtils.setParam("pace_record", pace.toString());
+                SharedPreferencesUtils.setParam("distance_record", String.format("%.2f", distance));
+                SharedPreferencesUtils.setParam("calories_record", String.format("%.2f", calories));
+                SharedPreferencesUtils.setParam("pace_record", String.format("%.2f", pace));
                 SharedPreferencesUtils.setParam("run_record_username", getUsername());
                 finish();
             }

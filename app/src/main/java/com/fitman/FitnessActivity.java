@@ -141,11 +141,6 @@ public class FitnessActivity extends BaseActivity {
 
     }
 
-    void initView(Integer index, String title) {
-        jzvdStd.setUp(getVideoUrl(1), title);
-        jzvdStd.posterImageView.setImageResource(R.drawable.fitness1);//TODO
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -178,7 +173,7 @@ public class FitnessActivity extends BaseActivity {
             case 4:
                 return "https://rr3---sn-4g5edndz.googlevideo.com/videoplayback?expire=1655784056&ei=GO6wYurxMsmI6dsP3tqKsAM&ip=154.22.133.197&id=o-AGSnOmE0r7ZW6HCs7-iJkbJHKJb7NHvH4lqr5VnEZOFY&itag=22&source=youtube&requiressl=yes&mh=Dn&mm=31%2C29&mn=sn-4g5edndz%2Csn-4g5lznle&ms=au%2Crdu&mv=m&mvi=3&pl=23&initcwndbps=308750&vprv=1&mime=video%2Fmp4&ratebypass=yes&dur=1220.069&lmt=1651306639903235&mt=1655761970&fvip=1&fexp=24001373%2C24007246&c=ANDROID&txp=4532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhALEdsDi_tT9djeoDngOjrt3ye91VpGzXiRvwcrFx9x51AiEA0Qb_YoDH4-EEz0Svx1npqO196oNo-yU2uXMmt2KGosA%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIgDeoi_Hl00OYwnCYaNfHUzwQmoGUBkaK8atBKmvRMILUCIQC5BnYVyQ1trKaFt3mzLzJydAL7e52Qn5CTA_17weo4bw%3D%3D&title=Y2Mate.is%20-%2020%20MIN%20FULL%20BODY%20WORKOUT%20%20No%20Equipment%20%20Pamela%20Reif-UBMk30rjy0o-720p-1655762457080";
             case 5:
-                return "https://rr3---sn-ab5l6nzd.googlevideo.com/videoplayback?expire=1655784069&ei=JO6wYpa4PIrw1gKZ9YOgCQ&ip=185.199.230.236&id=o-AOZPTEpqIRUkrJzOpHquErLjqpeOgn3SRygfRjGeaGIb&itag=22&source=youtube&requiressl=yes&mh=RL&mm=31%2C26&mn=sn-ab5l6nzd%2Csn-p5qlsny6&ms=au%2Conr&mv=m&mvi=3&pl=23&initcwndbps=1827500&vprv=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=673.982&lmt=1654838376834270&mt=1655761970&fvip=5&fexp=24001373%2C24007246&c=ANDROID&txp=4532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAPs3ZTXZPV0OoOymcUEmx7NBtfYE2ToZfNNnGaj1nOgAAiEAktRsW2lB6rcD4FFmqurXLZ2e9Y7YpUlaOft9AuHSxgQ%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAMwv2R9e2Yef1Op7h6VEcTW4EY-byScP7eEUjQix68HcAiBPaoMS0zQjO5CzTY8IDeVsJGo0nhYu2CwuciA8B2j3xQ%3D%3D&title=Y2Mate.is%20-%2010%20MIN%20BOOTY%20BURN%20%20No%20Equipment%20%20Pamela%20Reif-RqfkrZA_ie0-720p-1655762469681";
+                return "https://rr2---sn-4g5e6nsy.googlevideo.com/videoplayback?expire=1655878268&ei=HF6yYujpE56o1gLyu4PgBg&ip=154.194.9.57&id=o-AD81JY9sNeOkFPq888KFylLeC3nVTeB5byLrhlrtwdvC&itag=22&source=youtube&requiressl=yes&mh=RL&mm=31%2C29&mn=sn-4g5e6nsy%2Csn-4g5ednds&ms=au%2Crdu&mv=m&mvi=2&pl=24&initcwndbps=541250&vprv=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=673.982&lmt=1654838376834270&mt=1655856287&fvip=3&fexp=24001373%2C24007246%2C24208265&c=ANDROID&txp=4532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAOKne2tJraU77xoFPBJwWFukeG-lMyUnEXouNVOg_g6lAiEAgnM_ECTa_7uHfh1ziYA9mRzZtELqz6JvaTeoXu4PHz0%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIgAYmFjM3nSVHMUwuxmQyvOuMyPsDBdE6hBCx3jxCCto0CIQD5AmDe9AakrfhZkv0q673hUPOdobsVNiEZ__HGFZqotg%3D%3D&title=Y2Mate.is%20-%2010%20MIN%20BOOTY%20BURN%20%20No%20Equipment%20%20Pamela%20Reif-RqfkrZA_ie0-720p-1655856672394";
             default:
                 return "";
         }

@@ -115,4 +115,18 @@
     <string name="easy">简单</string>
     <string name="hard">困难</string>
     <string name="last_running_record">最近的跑步记录</string>
+    <string name="fitness_title_1">10分钟AB训练</string>
+    <string name="fitness_title_2">10分钟入门AB训练</string>
+    <string name="fitness_title_3">10分钟六包训练</string>
+    <string name="fitness_title_4">20分钟全身训练</string>
+    <string name="fitness_title_5">10分钟臀部燃烧</string>
+    <string name="sensornotavailable">步数传感器不可用。不能使用计步功能。</string>
+    <string name="we_can_help_you_achieve_it">我们可以帮助您实现！</string>
+    <string name="do_you_want_to_get_active_in_a_health_way">你想以健康的方式活跃起来吗？</string>
+    <string name="get_start">开始吧！</string>
+    <string name="fitness_description_1">灵感来自我最受欢迎的“六包训练”-新版！//Werbung\n\n每当我遇到用我的视频进行锻炼的人，问他们最喜欢哪一个，他们总是说：\'your Sixpack workout！\'。1.5年后，也许是时候换个新的了，哈哈！\n\n我的意见是：烧伤更严重，让我出汗更多，让我的腹肌感觉很好！也许这也是因为我还没有“习惯”这个练习组合。无论如何：您一定要试一试：）\n\n▸ 想知道你喜欢哪一个-旧的还是新的？\n\n\n如果你需要休息的话，不需要任何设备，也不需要休息（我想你现在已经习惯了），也不需要太多的空间：）拿着吧！不要放弃！\n\n视频是完整的，这意味着你可以按照我做的每项练习30秒。\n\n我建议改变你的训练，给你的肌肉足够的时间来恢复，并从不同的角度打击它们。如果你想以另一种方式挑战你的肌肉：看看我的早安训练、20分钟的战利品训练、性感手臂训练或卡路里燃烧训练！</string>
+    <string name="fitness_description_2">Ohhhh是的-初学者ab训练！♥︎ / Werbung\n如果你很难跟上我的超高强度“10分钟Ab训练”和“10分钟六包训练”。。。这是给你的：）\n每个人都从某个地方开始，我的其他训练需要强壮的核心肌肉。这就是为什么我真的想创建一个ab训练，这是适合初学者-同时仍然是超级有效的。\n听着。。它甚至包括休息！：D\n（如果你觉得休息时太容易了：只要在休息时继续最后一个练习&amp;一旦我开始了，就跳进新的动作）\n我妈妈尝试了这项训练，并说，这对她来说是完全可以控制的。。虽然她通常不太喜欢锻炼。这意味着：你没有借口。试试看♥︎\n__\n没有必要的设备，也不需要太多的空间：）视频是完整的，这意味着你可以按照我做的每一个练习30秒。这里有一个小的休息时间，你可以看看接下来要做什么运动。\n我建议改变你的训练，给你的肌肉足够的时间来恢复，并从不同的角度打击它们。\n我有更多适合初学者的训练！查看我的\n-20分钟全身训练，\n-早上好，训练，\n-10分钟冷却程序或我的\n-10分钟性感手臂训练\n__</string>
+    <string name="fitness_description_3">没有借口♥︎ 针对腹肌的快速高强度训练。您不需要任何设备或重量！！//Werbung\n\n视频是完整的，这意味着你可以按照我每次锻炼30秒的时间做任何事情，中间没有休息。\n\n不需要设备，不需要休息，也不需要太多空间：）如果你需要休息，那就休息吧！不要放弃！\n</string>
+    <string name="fitness_description_4">没有借口♥︎ 无论何时何地，您都可以进行全身训练。//Werbung\n\n您不需要任何设备或重量！！瞄准全身肌肉，让你快速出汗！\n\n视频是完整的，这意味着你可以按照我做的每项练习30秒。\中间有两次1分钟的休息。如果您需要暂停更长时间，请随时这样做。如果你不需要休息，跳过他们！\n\n我建议改变你的锻炼方式，让你的肌肉有足够的时间恢复。你可以每周进行2–3次这项训练，如果你想在其他日子保持活跃：看看我的六包、核心和战利品训练♥︎\n\n</string>
+    <string name="fitness_description_5">以臀部为目标的快速高强度训练。你不需要任何设备或重量！！/Werbung\n\n我通常在健身房训练双腿，但每当我旅行或没有时间进行一整天的举重训练时，我都喜欢这样做♥︎\n\n视频是完整的，这意味着你可以跟着我做任何事情！每次练习30秒。\n\n</string>
 </resources>
