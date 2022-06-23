@@ -23,6 +23,12 @@ import java.util.Date;
 
 public class UserProfileActivity extends BaseActivity {
 
+    NumberPicker np_height;
+    NumberPicker np_weight;
+    NumberPicker np_year;
+    NumberPicker np_month;
+    NumberPicker np_day;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +55,6 @@ public class UserProfileActivity extends BaseActivity {
                 //未在注册
                 btn_logout.setVisibility(View.VISIBLE);
                 btn_cancel.setVisibility(View.VISIBLE);
-
             }
         }
         else{
@@ -57,11 +62,11 @@ public class UserProfileActivity extends BaseActivity {
             btn_logout.setVisibility(View.INVISIBLE);
         }
 
-        NumberPicker np_height = findViewById(R.id.np_height);
-        NumberPicker np_weight = findViewById(R.id.np_weight);
-        NumberPicker np_year = findViewById(R.id.np_year);
-        NumberPicker np_month = findViewById(R.id.np_month);
-        NumberPicker np_day = findViewById(R.id.np_day);
+        np_height = findViewById(R.id.np_height);
+        np_weight = findViewById(R.id.np_weight);
+        np_year = findViewById(R.id.np_year);
+        np_month = findViewById(R.id.np_month);
+        np_day = findViewById(R.id.np_day);
         RadioGroup rg_gender = findViewById(R.id.rg_sex);
 
         EditText firstName = findViewById(R.id.et_firstName);
@@ -246,9 +251,17 @@ public class UserProfileActivity extends BaseActivity {
         userDao.updateEmail(username, email.getText().toString());
         userDao.updatePhone(username, phone.getText().toString());
         userDao.updateGender(username, rb_gender.getText().toString());
-        userDao.updateHeight(username, SharedPreferencesUtils.getParam("height", ""));
-        userDao.updateWeight(username, SharedPreferencesUtils.getParam("weight", ""));
-        userDao.updateBirthdayByString(username, SharedPreferencesUtils.getParam("birthday", ""));
+
+        int a = np_height.getValue();
+        int b = np_weight.getValue();
+        String defaultHeight = Integer.toString(a);
+        String defaultWeight = Integer.toString(b);
+
+        userDao.updateHeight(username, SharedPreferencesUtils.getParam("height", defaultHeight));
+        userDao.updateWeight(username, SharedPreferencesUtils.getParam("weight", defaultWeight));
+        String defaultBirthday = np_year.getValue() + "-" + np_month.getValue() + "-" + np_day.getValue();
+
+        userDao.updateBirthdayByString(username, SharedPreferencesUtils.getParam("birthday", defaultBirthday));
         Toast.makeText(this, "Update Successfully", Toast.LENGTH_SHORT).show();
         if(SharedPreferencesUtils.getParam("isRegistered", "false").equals("true")){
             SharedPreferencesUtils.setParam("isRegistered", "false");
