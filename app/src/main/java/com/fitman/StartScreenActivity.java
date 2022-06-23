@@ -119,7 +119,5 @@ public class StartScreenActivity extends BaseActivity {
         startScreenHandler.removeCallbacks(startScreenRunnable);
         skipHandler.removeCallbacks(skipRunnable);
         finish();
-
     }
-
 }

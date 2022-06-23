@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.fitman.utils.SharedPreferencesUtils;
 
 public class FirstStartActivity extends BaseActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

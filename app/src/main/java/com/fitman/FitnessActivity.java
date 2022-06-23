@@ -20,7 +20,6 @@ import cn.jzvd.JzvdStd;
 
 public class FitnessActivity extends BaseActivity {
     private JzvdStd jzvdStd;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -137,8 +136,6 @@ public class FitnessActivity extends BaseActivity {
                 });
                 break;
         }
-
-
     }
 
     @Override
@@ -157,10 +154,6 @@ public class FitnessActivity extends BaseActivity {
         super.onPause();
         Jzvd.releaseAllVideos();
     }
-
-
-
-
 
     public String getVideoUrl(Integer index){
         switch (index){

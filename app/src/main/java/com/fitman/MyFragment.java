@@ -33,7 +33,6 @@ public class MyFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -186,7 +185,6 @@ public class MyFragment extends BaseFragment {
         intent = new Intent("com.android.camera.action.CROP");
 
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-
         intent.setDataAndType(uri, "image/*");
         intent.putExtra("crop", "true");
         intent.putExtra("aspectX", 1);
@@ -267,10 +265,5 @@ public class MyFragment extends BaseFragment {
             Bitmap bitmap = readBitmap(getContext(), savePath);
             im_profile.setImageBitmap(bitmap);
         }
-
-
-
     }
-
-
 }

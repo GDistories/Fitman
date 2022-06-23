@@ -26,15 +26,11 @@ public class DailyAttendanceFragment extends BaseFragment {
     TextView mCurrentYearMonDat_tv;
     CalendarCardView calendarCardView;
     List<String> mAlreadySignDate = new ArrayList<>();
-
-
     private CustomDate mCustomDate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
@@ -164,7 +160,6 @@ public class DailyAttendanceFragment extends BaseFragment {
         initData();
     }
 
-
     //请求当月的签到数据
     public void initData() {
         mAlreadySignDate.clear();
@@ -202,9 +197,5 @@ public class DailyAttendanceFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_daily_attendance, container, false);
-    }
-
-    public void signIn(){
-
     }
 }

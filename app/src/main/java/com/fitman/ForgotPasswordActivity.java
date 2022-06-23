@@ -163,5 +163,4 @@ public class ForgotPasswordActivity extends BaseActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

@@ -12,6 +12,5 @@ public class BaseApplication extends android.app.Application {
     public void onCreate() {
         super.onCreate();
         SharedPreferencesUtils.init(this);
-//        SharedPreferencesUtils.setParam("isFirstOpen", "true");
     }
 }

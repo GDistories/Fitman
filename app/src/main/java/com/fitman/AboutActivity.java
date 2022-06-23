@@ -48,5 +48,4 @@ public class AboutActivity extends BaseActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

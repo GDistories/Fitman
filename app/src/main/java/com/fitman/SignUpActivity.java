@@ -56,8 +56,6 @@ public class SignUpActivity extends BaseActivity {
                 }, 300);
             }
         }, 1500);
-
-
     }
 
     public void signUp(View view) {
@@ -98,9 +96,6 @@ public class SignUpActivity extends BaseActivity {
             startActivity(new Intent(this, UserProfileActivity.class));
             finish();
         }
-
-
-
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

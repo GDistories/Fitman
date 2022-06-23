@@ -37,6 +37,5 @@ public class BaseFragment extends Fragment {
     public boolean hasPermission(Context context, String permission) {
         return context.checkCallingOrSelfPermission(permission)== PackageManager.PERMISSION_GRANTED;
     }
-    
 }
 

@@ -148,8 +148,6 @@ public class UserProfileActivity extends BaseActivity {
         np_month.setMaxValue(12);
         np_month.setWrapSelectorWheel(false);
 
-
-
         if (userDao.getBirthday(getUsername()) != null && SharedPreferencesUtils.getParam("isLogin","").equals("true")){
             Date birth = userDao.getBirthday(getUsername());
             Calendar birthday = Calendar.getInstance();

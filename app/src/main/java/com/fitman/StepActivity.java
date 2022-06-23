@@ -37,5 +37,4 @@ public class StepActivity extends BaseActivity {
             SharedPreferencesUtils.setParam("step_detector_sensor", "false");
         }
     }
-
 }

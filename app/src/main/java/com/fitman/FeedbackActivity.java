@@ -51,6 +51,4 @@ public class FeedbackActivity extends BaseActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

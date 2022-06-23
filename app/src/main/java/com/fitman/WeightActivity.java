@@ -10,7 +10,6 @@ public class WeightActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
-
         //TODO: Not implemented yet
     }
 }

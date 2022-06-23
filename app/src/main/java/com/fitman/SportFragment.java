@@ -17,12 +17,9 @@ import java.text.DecimalFormat;
 
 
 public class SportFragment extends BaseFragment {
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -50,7 +47,6 @@ public class SportFragment extends BaseFragment {
             }
         });
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -55,9 +55,6 @@ public class MyDataActivity extends BaseActivity {
         Integer attendance = attendanceDao.getMonthAttendanceCount(getUsername(), customDate.getYearMonth());
         tv_attendance_num.setText(attendance.toString());
         tv_step_num.setText(SharedPreferencesUtils.getParam("step", "0"));
-
-
-
     }
 
     @Override

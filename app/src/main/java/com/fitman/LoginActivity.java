@@ -59,8 +59,6 @@ public class LoginActivity extends BaseActivity {
             }
         }, 1500);
 
-
-
         TextView forgot_password = findViewById(R.id.tv_forgot_password);
         TextView register = findViewById(R.id.tv_register);
 
@@ -126,5 +124,4 @@ public class LoginActivity extends BaseActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

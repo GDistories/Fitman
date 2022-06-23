@@ -35,9 +35,6 @@ public class SettingActivity extends BaseActivity {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
                 if(s.equals("language")){
-//                    startActivity(new Intent(context, NavigationBottomActivity.class));
-//                    finish();
-
                     // 1秒钟后重启应用
                     restartApp(100);
                 }
@@ -66,5 +63,4 @@ public class SettingActivity extends BaseActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

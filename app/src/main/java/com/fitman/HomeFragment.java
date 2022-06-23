@@ -66,28 +66,6 @@ public class HomeFragment extends BaseFragment {
                 Log.e(TAG, "currentStep: " + currentSteps);
                 steps = currentSteps - initSteps;
 
-//                Log.e(TAG, "initStep: " + initSteps);
-//                Log.e(TAG, "currentStep: " + currentSteps);
-//                if (!customDate.toString().equals(SharedPreferencesUtils.getParam("saveInitStepDate", "").toString())) {
-//                    //过一天，清空InitStep值
-//                    initSteps = currentSteps;
-//                    SharedPreferencesUtils.setParam("saveInitStepDate", customDate.toString());
-//                    SharedPreferencesUtils.setParam("saveInitStep", initSteps.toString());
-//                    Log.e(TAG, "第二天");
-//                }
-//                initSteps = Integer.parseInt(SharedPreferencesUtils.getParam("saveInitStep", "-1"));
-//                currentSteps = (int) sensorEvent.values[0];
-//                if(initSteps > currentSteps || initSteps == -1) {
-//                    Log.e(TAG, "initStep: " + initSteps);
-//                    Log.e(TAG, "currentStep: " + currentSteps);
-//                    Log.e(TAG, "change");
-//                    initSteps = currentSteps;
-//                    SharedPreferencesUtils.setParam("saveInitStepDate", customDate.toString());
-//                    SharedPreferencesUtils.setParam("saveInitStep", initSteps.toString());
-//
-//                }
-
-
                 steps = currentSteps - initSteps;
                 SharedPreferencesUtils.setParam("step", steps.toString());
             }
@@ -161,7 +139,6 @@ public class HomeFragment extends BaseFragment {
 //            }
 //        });
 
-
         if(isLogin()){
             CustomDate mCustomDate = new CustomDate();
             if(attendanceDao.isAttendanceExist(getUsername(), mCustomDate.toString())){
@@ -186,8 +163,6 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-
-
     }
 
     @Override
@@ -202,18 +177,4 @@ public class HomeFragment extends BaseFragment {
         super.onPause();
         handler.removeCallbacks(runnable);
     }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
-
-
-
-
 }
