@@ -33,7 +33,6 @@ public class SignUpActivity extends BaseActivity {
         setActionBarTitle(getString(R.string.sign_up));
         showBackButton();
 
-
         //LOGO进场动画
         logoAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation_login);
         disappearAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation_disappear);

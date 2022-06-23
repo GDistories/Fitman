@@ -107,5 +107,4 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                         "attendanceMonth text NOT NULL)"
         );
     }
-
 }

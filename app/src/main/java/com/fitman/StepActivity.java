@@ -18,6 +18,8 @@ public class StepActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step);
 
+        //TODO: Not implemented yet
+
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null) {
             Log.e(TAG, "onCreate: step counter sensor is available");

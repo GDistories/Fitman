@@ -182,7 +182,6 @@ public class DailyAttendanceFragment extends BaseFragment {
         mAlreadySignDate.addAll(list);
     }
 
-
     //刷新界面
     public void setSignCalendarDate(){
         //设置后台返回的本月度签到数据

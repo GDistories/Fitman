@@ -6,8 +6,6 @@ import android.content.SharedPreferences;
 
 
 public class SharedPreferencesUtils {
-
-
     private static SharedPreferences sharedPreferences;
     //private static SharedPreferences.OnSharedPreferenceChangeListener listener;
 
@@ -33,5 +31,4 @@ public class SharedPreferencesUtils {
     	editor.clear();
     	editor.apply();
     }
-
 }

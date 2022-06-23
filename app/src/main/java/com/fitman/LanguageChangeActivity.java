@@ -27,7 +27,7 @@ public class LanguageChangeActivity extends BaseActivity {
         setContentView(R.layout.activity_language_change);
 
 
-        //TODO
+        //TODO: Delete this code
     }
 
     public void change1(View view) {
