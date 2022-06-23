@@ -28,9 +28,9 @@ public class CustomDate implements Serializable {
         this.day = DateUtil.getCurrentMonthDay();
     }
 
-    public static CustomDate modifiDayForObject(CustomDate date,int day){
-        CustomDate modifiDate = new CustomDate(date.year,date.month,day);
-        return modifiDate;
+    public static CustomDate modifyDayForObject(CustomDate date, int day){
+        CustomDate modifyDate = new CustomDate(date.year,date.month,day);
+        return modifyDate;
     }
     @Override
     public String toString() {

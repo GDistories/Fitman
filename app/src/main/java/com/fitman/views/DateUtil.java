@@ -8,7 +8,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtil {
-    public static String[] weekName = { "周日", "周一", "周二", "周三", "周四", "周五","周六" };
 
     public static int getMonthDays(int year, int month) {
         if (month > 12) {

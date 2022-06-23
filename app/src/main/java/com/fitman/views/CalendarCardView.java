@@ -38,12 +38,6 @@ public class CalendarCardView extends View {
     private float mDownX;
     private float mDownY;
 
-    /**
-     * 单元格点击的回调接口
-     *
-     * @author wuwenjie
-     *
-     */
     public interface OnCellClickListener {
         void clickDate(CustomDate date); // 回调点击的日期
 
@@ -123,20 +117,20 @@ public class CalendarCardView extends View {
                 // 这个月的
                 if (position >= firstDayWeek && position < firstDayWeek + currentMonthDays) {
                     day++;
-                    rows[j].cells[i] = new Cell(CustomDate.modifiDayForObject(mShowDate, day), State.CURRENT_MONTH_DAY, i, j);
+                    rows[j].cells[i] = new Cell(CustomDate.modifyDayForObject(mShowDate, day), State.CURRENT_MONTH_DAY, i, j);
                     // 今天
                     if (isCurrentMonth && day == monthDay ) {
-                        CustomDate date = CustomDate.modifiDayForObject(mShowDate, day);
+                        CustomDate date = CustomDate.modifyDayForObject(mShowDate, day);
                         rows[j].cells[i] = new Cell(date, State.TODAY, i, j);
                     }
 
                     if (isCurrentMonth && day > monthDay) { // 如果比这个月的今天要大，表示还没到
-                        rows[j].cells[i] = new Cell(CustomDate.modifiDayForObject(mShowDate, day), State.UNREACH_DAY, i, j);
+                        rows[j].cells[i] = new Cell(CustomDate.modifyDayForObject(mShowDate, day), State.UNREACH_DAY, i, j);
                     }
 
                     if (!isCurrentMonth){
                         if (isLastMonth){
-                            rows[j].cells[i] = new Cell(CustomDate.modifiDayForObject(mShowDate, day), State.UNREACH_DAY, i, j);
+                            rows[j].cells[i] = new Cell(CustomDate.modifyDayForObject(mShowDate, day), State.UNREACH_DAY, i, j);
                         }
                     }
 
@@ -194,13 +188,6 @@ public class CalendarCardView extends View {
             case MotionEvent.ACTION_UP:
                 float disX = event.getX() - mDownX;
                 float disY = event.getY() - mDownY;
-//                DebugLog.e("--disX--" + disX + "--disY--" + disY + "--touchSlop--" + touchSlop);
-
-//                if (Math.abs(disX) < touchSlop && Math.abs(disY) < touchSlop) {//点击事件
-//                    int col = (int) (mDownX / mCellSpace);
-//                    int row = (int) (mDownY / mCellSpace);
-//                    measureClickCell(col, row);
-//                }
 
                 //判断左滑还是右滑
                 if (Math.abs(disX) > page_touch_slop && Math.abs(disX) > Math.abs(disY)) {
@@ -250,12 +237,7 @@ public class CalendarCardView extends View {
         }
     }
 
-    /**
-     * 组元素
-     *
-     * @author wuwenjie
-     *
-     */
+
     class Row {
         public int j;
 
@@ -276,12 +258,7 @@ public class CalendarCardView extends View {
 
     }
 
-    /**
-     * 单元格元素
-     *
-     * @author wuwenjie
-     *
-     */
+
     class Cell {
         public CustomDate date;
         public State state;
@@ -345,10 +322,7 @@ public class CalendarCardView extends View {
         }
     }
 
-    /**
-     *
-     * @author wuwenjie 单元格的状态 当前月日期，过去的月的日期，下个月的日期
-     */
+
     enum State {
         TODAY,CURRENT_MONTH_DAY, PAST_MONTH_DAY, NEXT_MONTH_DAY, UNREACH_DAY;
     }
